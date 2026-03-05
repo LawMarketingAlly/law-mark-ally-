@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Law Marketing Ally</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400&display=swap" rel="stylesheet"/>
+<style>
+/* ── Variables ─────────────────────────────────────── */
+:root{
+  --green:#e88b1f;
+  --green-accent:#e88b1f;
+  --bg-black:#000002;
+  --bg-dark:#030305;
+  --bg-section:#0a101c;
+  --text-white:#fff;
+  --text-muted:rgba(255,255,255,.64);
+  --text-body:rgba(224,224,224,.86);
+  --border:rgba(255,255,255,.1);
+  --font:'Plus Jakarta Sans','Inter',sans-serif;
+  --mono:'Geist Mono','Courier New',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;width:100%}
+body{background:var(--bg-black);color:var(--text-white);font-family:var(--font);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ── Shared ────────────────────────────────────────── */
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px;width:100%}
+.pill{display:inline-flex;align-items:center;gap:7px;background:rgba(232,139,31,.08);border:1px solid rgba(232,139,31,.22);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-accent)}
+.dot{width:6px;height:6px;background:var(--green-accent);border-radius:50%;display:inline-block;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#000;font-family:var(--font);font-size:14px;font-weight:700;border-radius:88px;padding:13px 28px;transition:background .2s,transform .15s;white-space:nowrap;cursor:pointer;border:none}
+.btn:hover{background:#f09a30;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text-white);border:1px solid var(--border);font-weight:500}
+.btn-ghost:hover{border-color:rgba(255,255,255,.3);background:transparent}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade1{animation:fadeUp .6s ease .0s both}
+.fade2{animation:fadeUp .6s ease .1s both}
+.fade3{animation:fadeUp .6s ease .2s both}
+.fade4{animation:fadeUp .6s ease .35s both}
+
+/* ══════════════════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:9;
+  padding:18px 40px;
+  background:rgba(0,0,2,.65);
+  backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s,background .3s;
+}
+.nav.scrolled{border-bottom-color:var(--border);background:rgba(0,0,2,.88)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.nav-logo svg{display:block}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-phone{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(255,255,255,.8);padding:10px 16px;border:1px solid var(--border);border-radius:88px;transition:border-color .2s}
+.nav-phone:hover{border-color:rgba(255,255,255,.3)}
+.hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;color:#fff}
+
+/* mobile menu */
+.mob-menu{position:fixed;top:0;right:0;bottom:0;width:280px;z-index:10;background:#0a101c;border-left:1px solid var(--border);transform:translateX(100%);transition:transform .3s cubic-bezier(.23,1,.32,1);padding:80px 28px 40px;display:flex;flex-direction:column;gap:18px}
+.mob-menu.open{transform:translateX(0)}
+.mob-link{font-size:17px;font-weight:600;padding:8px 0;border-bottom:1px solid var(--border)}
+.mob-phone{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-muted);margin-top:6px}
+.mob-cta{margin-top:14px;text-align:center}
+.mob-overlay{position:fixed;inset:0;z-index:8;background:rgba(0,0,0,.5);display:none}
+.mob-overlay.open{display:block}
+
+/* ══════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════ */
+.hero{
+  position:relative;min-height:800px;background:var(--bg-black);
+  display:flex;align-items:flex-start;overflow:hidden;padding-top:98px;
+}
+.hero-glow{position:absolute;top:-15%;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(ellipse at center,rgba(232,139,31,.09) 0%,transparent 70%);pointer-events:none}
+
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:56px;gap:26px;width:100%}
+.hero-pill{margin-bottom:4px}
+.hero h1{
+  font-size:clamp(42px,5.7vw,82px);font-weight:800;line-height:.97;
+  letter-spacing:-.03em;max-width:900px;
+}
+.green{color:var(--green-accent)}
+.hero-sub{font-size:clamp(16px,1.4vw,20px);color:var(--text-muted);max-width:540px;line-height:1.55}
+.hero-sub strong{color:#fff;font-weight:600}
+.hero-img{position:relative;width:100%;max-width:828px;margin-top:16px}
+.hero-img-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(232,139,31,.12),transparent 70%);pointer-events:none}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent,var(--bg-dark));z-index:3;pointer-events:none}
+
+/* ══════════════════════════════════════════════════════
+   WE DO ONE THING
+══════════════════════════════════════════════════════ */
+.wdot{position:relative;background:var(--bg-dark);padding:100px 0 90px;overflow:hidden}
+.wdot-bg{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1200px;height:600px;background:radial-gradient(ellipse at top,rgba(232,139,31,.06),transparent 65%);pointer-events:none}
+.wdot-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.wdot-left{position:sticky;top:120px;display:flex;flex-direction:column;gap:26px}
+.wdot h2{font-size:clamp(34px,3.4vw,54px);font-weight:800;line-height:1.05;letter-spacing:-.025em}
+.wdot-right{display:flex;flex-direction:column;gap:22px}
+.body-p{font-size:17px;line-height:1.72;color:var(--text-body)}
+.body-p strong{color:#fff;font-weight:600}
+.promise-p{padding:18px 20px;border-left:2px solid var(--green);background:rgba(232,139,31,.04);border-radius:0 8px 8px 0}
+.wdot-cta{align-self:flex-start;margin-top:6px}
+.section-rule{height:1px;background:var(--border);margin-top:80px}
+
+/* ══════════════════════════════════════════════════════
+   CLIENT MARQUEE
+══════════════════════════════════════════════════════ */
+.marquee-section{background:var(--bg-section);padding:56px 0 44px;overflow:hidden}
+.marquee-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-accent);text-align:center;margin-bottom:4px}
+.marquee-sub{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38);text-align:center;margin-bottom:32px}
+.track-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 10%,#000 90%,transparent 100%)}
+.track{display:flex;gap:14px;width:max-content;padding:8px 0}
+.track-l{animation:scrollL 50s linear infinite}
+.track-r{animation:scrollR 40s linear infinite}
+@keyframes scrollL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scrollR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+
+.card{flex-shrink:0;width:130px;height:178px;border-radius:12px;background:var(--card-bg,#1a2a3a);border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;gap:9px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(232,139,31,.25)}
+.card-bar{width:36px;height:3px;border-radius:2px}
+.card-name{font-size:11px;font-weight:700;color:#fff;text-align:center;line-height:1.3}
+.card-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32)}
+
+.logo-wrap{overflow:hidden;margin-top:28px;padding:10px 0;border-top:1px solid var(--border);-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+.logo-track{display:flex;align-items:center;gap:44px;width:max-content}
+.logo-item{flex-shrink:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;transition:color .2s}
+.logo-item:hover{color:rgba(255,255,255,.65)}
+
+@media(prefers-reduced-motion:reduce){.track-l,.track-r{animation:none}}
+
+/* ══════════════════════════════════════════════════════
+   INTRO SECTION
+══════════════════════════════════════════════════════ */
+.intro-section{background:var(--bg-black);padding:50px 0 30px}
+.intro-content{max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:24px}
+.intro-lead{font-size:clamp(22px,2.4vw,30px);font-weight:700;line-height:1.4;letter-spacing:-.015em;color:var(--text-white)}
+.intro-body{font-size:17px;line-height:1.75;color:var(--text-muted)}
+
+/* ══════════════════════════════════════════════════════
+   OUR PILLARS
+══════════════════════════════════════════════════════ */
+.pillars{position:relative;background:var(--bg-section);padding:40px 0 100px;overflow:hidden}
+.pillars-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(232,139,31,.06),transparent 60%);pointer-events:none}
+.pillars-grid{position:relative;z-index:1;display:grid;grid-template-columns:320px 1fr;gap:80px;align-items:center}
+.pillars-header{display:flex;flex-direction:column;gap:18px}
+.pillars h2{font-size:clamp(38px,3.2vw,54px);font-weight:800;letter-spacing:-.025em;line-height:1.05}
+.pillars-sub{font-size:15px;line-height:1.65;color:var(--text-muted);max-width:260px}
+.pillars-cards{display:flex;flex-direction:column;gap:12px}
+
+.p-card{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:16px;padding:26px;cursor:pointer;transition:border-color .3s,background .3s}
+.p-card:hover,.p-card.open{border-color:rgba(232,139,31,.3);background:rgba(232,139,31,.04)}
+.p-card-head{display:flex;align-items:flex-start;gap:18px}
+.p-icon-wrap{flex-shrink:0;width:64px;height:64px;border-radius:14px;background:rgba(232,139,31,.08);border:1px solid rgba(232,139,31,.15);display:flex;align-items:center;justify-content:center;font-size:34px;color:var(--green-accent)}
+.p-titles{flex:1;min-width:0}
+.p-title{font-size:20px;font-weight:700;letter-spacing:-.01em;margin-bottom:7px}
+.p-desc{font-size:15px;line-height:1.6;color:rgba(255,255,255,.58)}
+.p-toggle{flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);transition:background .2s,color .2s;cursor:pointer}
+.p-card.open .p-toggle,.p-card:hover .p-toggle{background:rgba(232,139,31,.1);color:var(--green-accent)}
+.p-chevron{transition:transform .3s cubic-bezier(.23,1,.32,1);display:block}
+.p-card.open .p-chevron{transform:rotate(180deg)}
+
+.p-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.23,1,.32,1);overflow:hidden}
+.p-card.open .p-body{grid-template-rows:1fr}
+.p-body-inner{overflow:hidden}
+.p-list{list-style:none;padding-top:22px;margin-left:62px;display:flex;flex-direction:column;gap:10px}
+.p-li{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,.75)}
+.p-check{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(232,139,31,.1);border:1px solid rgba(232,139,31,.22);display:flex;align-items:center;justify-content:center;color:var(--green-accent)}
+.p-cta{margin-top:18px;margin-left:62px;display:inline-flex;font-size:13px;padding:9px 20px}
+
+/* ══════════════════════════════════════════════════════
+   TESTIMONIAL
+══════════════════════════════════════════════════════ */
+.testi{position:relative;background:var(--bg-section);padding:96px 0;overflow:hidden;border-top:1px solid var(--border)}
+.testi-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1000px;height:500px;background:radial-gradient(ellipse,rgba(232,139,31,.06),transparent 65%);pointer-events:none}
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.testi-content{display:flex;flex-direction:column;gap:22px;position:relative;z-index:1}
+.testi-big-quote{font-size:80px;line-height:.9;color:rgba(232,139,31,.12);font-family:Georgia,serif;position:absolute;top:-14px;left:-10px;pointer-events:none;user-select:none}
+.stars{display:flex;gap:4px}
+.star{color:#fbbf24;font-size:20px}
+.testi blockquote{font-size:clamp(26px,3vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.02em;font-style:normal}
+.testi-author{display:flex;align-items:center;gap:14px}
+.author-av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#e88b1f,#b06510);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#000;flex-shrink:0}
+.author-name{font-size:14px;font-weight:700;letter-spacing:.08em}
+.author-title{font-size:13px;color:rgba(255,255,255,.46);margin-top:2px}
+
+.testi-video{display:flex;align-items:center;justify-content:center}
+.video-box{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;border:1px solid var(--border);overflow:hidden;background:#0a101c}
+.video-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,#0d1525,#111827)}
+.play-btn{width:64px;height:64px;border-radius:50%;background:rgba(232,139,31,.14);border:2px solid rgba(232,139,31,.38);display:flex;align-items:center;justify-content:center;color:var(--green-accent);transition:transform .2s,background .2s;cursor:pointer}
+.play-btn:hover{transform:scale(1.06);background:rgba(232,139,31,.24)}
+.vid-name{font-size:16px;font-weight:700}
+.vid-sub{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+.corner{position:absolute;width:22px;height:22px}
+.corner.tl{top:-1px;left:-1px;border-top:2px solid var(--green);border-left:2px solid var(--green);border-radius:16px 0 0 0}
+.corner.br{bottom:-1px;right:-1px;border-bottom:2px solid var(--green);border-right:2px solid var(--green);border-radius:0 0 16px 0}
+
+/* ══════════════════════════════════════════════════════
+   ACCOLADES
+══════════════════════════════════════════════════════ */
+.accolades{background:var(--bg-section);padding:80px 0;border-top:1px solid var(--border)}
+.accolades-hdr{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:56px}
+.accolades h2{font-size:clamp(34px,3vw,48px);font-weight:800;letter-spacing:-.025em}
+.accolades-sub{font-size:15px;color:rgba(255,255,255,.5);max-width:380px}
+.badges{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:30px}
+.badge-ring{width:130px;height:130px;border-radius:50%;border:2px solid var(--b-col,rgba(255,255,255,.15));display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,var(--b-glow,rgba(255,255,255,.03)),transparent 70%);padding:4px;transition:transform .25s,border-color .25s;cursor:default}
+.badge-ring:hover{transform:scale(1.06);border-color:var(--b-hover,rgba(255,255,255,.4))}
+.badge-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:5px;padding:14px}
+.badge-tag{font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.badge-title{font-size:11px;font-weight:700;line-height:1.3}
+.badge-org{font-size:9px;color:rgba(255,255,255,.42);line-height:1.3;text-align:center}
+
+/* ══════════════════════════════════════════════════════
+   SCHEDULE
+══════════════════════════════════════════════════════ */
+.schedule{position:relative;background:var(--bg-black);padding:100px 0 80px;overflow:hidden}
+.schedule-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1000px;height:600px;background:radial-gradient(ellipse at top,rgba(232,139,31,.08),transparent 60%);pointer-events:none}
+.schedule-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:52px}
+.schedule-hdr{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:620px}
+.schedule h2{font-size:clamp(34px,3.5vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.1}
+.schedule-sub{font-size:17px;line-height:1.6;color:rgba(255,255,255,.58)}
+.schedule-widget{width:100%;max-width:900px;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--bg-section);min-height:700px}
+.schedule-widget iframe{width:100%;min-height:700px;border:none;display:block;background:transparent}
+
+/* ══════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════ */
+.footer{position:relative;background:var(--bg-black);padding:70px 0 36px;overflow:hidden}
+.footer-mtn{position:absolute;top:0;left:0;right:0;height:280px;opacity:.45;pointer-events:none}
+.footer-mtn svg{width:100%;height:100%}
+.footer-slant{position:absolute;top:0;left:0;right:0;height:56px;background:linear-gradient(to bottom right,var(--bg-section) 49.9%,transparent 50%);pointer-events:none}
+.footer-inner{position:relative;z-index:1;display:flex;flex-direction:column}
+
+.footer-cta-row{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:52px 0 36px;flex-wrap:wrap}
+.footer-cta-hl{font-size:clamp(38px,5vw,76px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.footer-cta-btn{flex-shrink:0;font-size:15px;padding:15px 32px}
+.footer-rule{height:1px;background:var(--border);margin-bottom:52px}
+
+.footer-cols{display:grid;grid-template-columns:auto 1fr auto auto;gap:56px;align-items:start;margin-bottom:52px}
+.footer-brand{display:flex;flex-direction:column;gap:18px}
+.footer-tagline{font-size:15px;font-weight:600;line-height:1.5;color:rgba(255,255,255,.55)}
+.footer-socials{display:flex;gap:9px}
+.social-btn{width:35px;height:35px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);transition:background .2s,color .2s,border-color .2s}
+.social-btn:hover{background:rgba(232,139,31,.1);color:var(--green-accent);border-color:rgba(232,139,31,.22)}
+.footer-col{display:flex;flex-direction:column;gap:11px}
+.footer-col-label{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:3px}
+.footer-link{font-size:15px;color:rgba(255,255,255,.72);transition:color .2s;display:block}
+.footer-link:hover{color:var(--green-accent)}
+.footer-addr{font-style:normal;font-size:15px;color:rgba(255,255,255,.72);line-height:1.7}
+.footer-geo{font-size:13px;color:rgba(255,255,255,.38)}
+.footer-coords{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.05em}
+.footer-bottom{padding-top:22px;border-top:1px solid var(--border)}
+.footer-copy{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.3)}
+.footer-copy a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-copy a:hover{color:var(--green-accent)}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media(max-width:1100px){
+  .wdot-grid,.pillars-grid,.testi-grid{grid-template-columns:1fr;gap:48px}
+  .wdot-left,.pillars-header{position:static}
+  .pillars-sub{max-width:100%}
+  .footer-cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:799px){
+  .wrap{padding:0 20px}
+  .nav{padding:14px 20px}
+  .nav-phone span{display:none}
+  .nav-cta-desktop{display:none}
+  .hamburger{display:flex}
+  .hero{min-height:auto;padding-top:80px}
+  .hero h1{font-size:38px;line-height:1}
+  .wdot{padding:60px 0}
+  .pillars{padding:60px 0}
+  .testi{padding:60px 0}
+  .accolades{padding:60px 0}
+  .schedule{padding:60px 0}
+  .schedule-widget{min-height:580px}
+  .schedule-widget iframe{min-height:580px}
+  .footer-cta-row{flex-direction:column;align-items:flex-start}
+  .footer-cols{grid-template-columns:1fr;gap:36px}
+  .p-list,.p-cta{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ NAVBAR ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Law Marketing Ally Home">
+      <svg width="180" height="90" viewBox="0 0 280 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="aGradNav" x1="0.3" y1="0" x2="0.7" y2="1">
+            <stop offset="0%" stop-color="#f0a030"/>
+            <stop offset="60%" stop-color="#e88b1f"/>
+            <stop offset="100%" stop-color="#d47518"/>
+          </linearGradient>
+        </defs>
+        <!-- Large centered A icon -->
+        <!-- Orange left side of A with gradient -->
+        <polygon points="140,4 80,80 140,80" fill="url(#aGradNav)"/>
+        <!-- Navy right side of A -->
+        <polygon points="140,28 190,80 140,80" fill="#1b2a4a"/>
+        <!-- Diagonal swoosh slash -->
+        <path d="M92,68 C120,55 165,58 195,62" stroke="#e88b1f" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- LAW MARKETING on same line, centered -->
+        <text x="52" y="106" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="700" letter-spacing="3">LAW</text>
+        <text x="112" y="106" fill="#e88b1f" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="700" letter-spacing="2">MARKETING</text>
+        <!-- Orange line — ALLY — Orange line, centered -->
+        <line x1="62" y1="122" x2="108" y2="122" stroke="#e88b1f" stroke-width="1.5"/>
+        <text x="114" y="127" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="18" font-weight="700" letter-spacing="5">ALLY</text>
+        <line x1="186" y1="122" x2="232" y2="122" stroke="#e88b1f" stroke-width="1.5"/>
+      </svg>
+    </a>
+    <div class="nav-actions">
+      <a href="tel:+18017012030" class="nav-phone btn-ghost btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.68 19.79 19.79 0 01.82 2a2 2 0 011.97-2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.07 7.07a16 16 0 006 6l.93-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        <span>(602) 694-2905</span>
+      </a>
+      <a href="#schedule" class="btn nav-cta-desktop">Schedule Now</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#about" class="mob-link" onclick="closeMenu()">About</a>
+  <a href="#pillars" class="mob-link" onclick="closeMenu()">Our Pillars</a>
+  <a href="#testimonial" class="mob-link" onclick="closeMenu()">Results</a>
+  <a href="#schedule" class="mob-link" onclick="closeMenu()">Contact</a>
+  <a href="tel:+18017012030" class="mob-phone">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.68 19.79 19.79 0 01.82 2a2 2 0 011.97-2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.07 7.07a16 16 0 006 6l.93-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+    (602) 694-2905
+  </a>
+  <a href="#schedule" class="btn mob-cta" onclick="closeMenu()">Schedule Now</a>
+</div>
+<div class="mob-overlay" id="mobOverlay" onclick="closeMenu()"></div>
+
+<!-- ═══════════════════════════════════════ HERO ══════ -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-inner">
+    <h1 class="fade2">
+      The <span class="green">Ally</span> Your Law Firm<br>
+      Deserves.
+    </h1>
+    <p class="hero-sub fade3">
+      Real marketing guidance. Real results. No guesswork.
+    </p>
+    <a href="#schedule" class="btn fade4">
+      Schedule Now
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="hero-img fade4">
+      <div class="hero-img-glow"></div>
+      <svg viewBox="0 0 828 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+        <defs>
+          <linearGradient id="mg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a101c" stop-opacity="0"/><stop offset="100%" stop-color="#030305" stop-opacity="1"/></linearGradient>
+          <radialGradient id="glow1" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.12"/><stop offset="100%" stop-color="#e88b1f" stop-opacity="0"/></radialGradient>
+          <linearGradient id="barG" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.9"/><stop offset="100%" stop-color="#f0a840" stop-opacity="0.6"/></linearGradient>
+          <linearGradient id="barN" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#1b2a4a" stop-opacity="0.8"/><stop offset="100%" stop-color="#2a3d66" stop-opacity="0.5"/></linearGradient>
+          <linearGradient id="lineG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.3"/><stop offset="100%" stop-color="#e88b1f" stop-opacity="0.9"/></linearGradient>
+          <filter id="glowF"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- Background -->
+        <rect width="828" height="420" fill="#080e1a" rx="20"/>
+        <rect width="828" height="420" fill="url(#glow1)"/>
+        <rect x="1" y="1" width="826" height="418" rx="19" fill="none" stroke="rgba(232,139,31,0.12)" stroke-width="1"/>
+
+        <!-- Dashboard panel -->
+        <rect x="40" y="30" width="748" height="360" rx="14" fill="#0c1322" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+        <!-- Top bar -->
+        <rect x="40" y="30" width="748" height="44" rx="14" fill="#0f1829"/>
+        <rect x="40" y="60" width="748" height="14" fill="#0f1829"/>
+        <circle cx="68" cy="52" r="6" fill="#e88b1f" opacity="0.8"/>
+        <circle cx="88" cy="52" r="6" fill="#1b2a4a" opacity="0.6"/>
+        <circle cx="108" cy="52" r="6" fill="#1b2a4a" opacity="0.4"/>
+        <text x="400" y="56" fill="rgba(255,255,255,0.4)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="600" text-anchor="middle">Law Marketing Ally — Performance Dashboard</text>
+
+        <!-- KPI Cards -->
+        <rect x="60" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
+        <text x="76" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">NEW LEADS</text>
+        <text x="76" y="140" fill="#e88b1f" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">247</text>
+        <text x="140" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">+32%</text>
+
+        <rect x="240" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
+        <text x="256" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">SIGNED CLIENTS</text>
+        <text x="256" y="140" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">89</text>
+        <text x="300" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">+18%</text>
+
+        <rect x="420" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
+        <text x="436" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">COST PER CASE</text>
+        <text x="436" y="140" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">$412</text>
+        <text x="505" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">-24%</text>
+
+        <rect x="600" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
+        <text x="616" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">ROI</text>
+        <text x="616" y="140" fill="#e88b1f" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">5.2x</text>
+        <text x="682" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">+41%</text>
+
+        <!-- Bar chart area -->
+        <text x="76" y="196" fill="rgba(255,255,255,0.3)" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="600" letter-spacing="1">MONTHLY CASE VOLUME</text>
+
+        <!-- Grid lines -->
+        <line x1="60" y1="215" x2="500" y2="215" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="60" y1="245" x2="500" y2="245" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="60" y1="275" x2="500" y2="275" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="60" y1="305" x2="500" y2="305" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="60" y1="335" x2="500" y2="335" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="60" y1="365" x2="500" y2="365" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+        <!-- Bars -->
+        <rect x="80" y="325" width="24" height="40" rx="4" fill="url(#barN)"/>
+        <rect x="115" y="305" width="24" height="60" rx="4" fill="url(#barG)"/>
+        <rect x="155" y="315" width="24" height="50" rx="4" fill="url(#barN)"/>
+        <rect x="190" y="290" width="24" height="75" rx="4" fill="url(#barG)"/>
+        <rect x="230" y="300" width="24" height="65" rx="4" fill="url(#barN)"/>
+        <rect x="265" y="270" width="24" height="95" rx="4" fill="url(#barG)"/>
+        <rect x="305" y="280" width="24" height="85" rx="4" fill="url(#barN)"/>
+        <rect x="340" y="255" width="24" height="110" rx="4" fill="url(#barG)"/>
+        <rect x="380" y="265" width="24" height="100" rx="4" fill="url(#barN)"/>
+        <rect x="415" y="235" width="24" height="130" rx="4" fill="url(#barG)"/>
+        <rect x="455" y="245" width="24" height="120" rx="4" fill="url(#barN)"/>
+        <rect x="490" y="215" width="24" height="150" rx="4" fill="url(#barG)"/>
+
+        <!-- Month labels -->
+        <text x="92" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Jan</text>
+        <text x="127" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Feb</text>
+        <text x="167" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Mar</text>
+        <text x="202" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Apr</text>
+        <text x="242" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">May</text>
+        <text x="277" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Jun</text>
+        <text x="317" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Jul</text>
+        <text x="352" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Aug</text>
+        <text x="392" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Sep</text>
+        <text x="427" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Oct</text>
+        <text x="467" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Nov</text>
+        <text x="502" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Dec</text>
+
+        <!-- Right side - Trend line chart -->
+        <rect x="540" y="188" width="230" height="186" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
+        <text x="556" y="210" fill="rgba(255,255,255,0.3)" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="600" letter-spacing="1">INTAKE CONVERSION</text>
+
+        <!-- Trend line -->
+        <polyline points="556,340 580,332 604,325 628,310 652,318 676,295 700,280 724,260 748,240" fill="none" stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowF)"/>
+
+        <!-- Area under line -->
+        <polygon points="556,340 580,332 604,325 628,310 652,318 676,295 700,280 724,260 748,240 748,360 556,360" fill="#e88b1f" opacity="0.06"/>
+
+        <!-- Data dots -->
+        <circle cx="556" cy="340" r="3" fill="#e88b1f"/>
+        <circle cx="628" cy="310" r="3" fill="#e88b1f"/>
+        <circle cx="700" cy="280" r="3" fill="#e88b1f"/>
+        <circle cx="748" cy="240" r="4" fill="#e88b1f" stroke="#0c1322" stroke-width="2"/>
+        <text x="748" y="233" fill="#e88b1f" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="700" text-anchor="middle">68%</text>
+
+        <!-- Bottom fade -->
+        <rect width="828" height="420" fill="url(#mg1)" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-fade"></div>
+</section>
+
+
+<!-- ════════════════════════════ CLIENT MARQUEE ════════ -->
+<section class="marquee-section" id="clients">
+  <p class="marquee-label">Tracking Client Trends Across Major Platforms</p>
+
+  <!-- Logo strip -->
+  <div class="logo-wrap" style="border-top:none;margin-top:0">
+    <div class="logo-track track-r" id="logoTrack"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ ABOUT / INTRO ════════ -->
+<section class="intro-section">
+  <div class="wrap">
+    <div class="intro-content">
+      <p class="intro-lead"><span class="green">15 years</span> in the legal marketing trenches — the <span class="green">Ally</span> you've been looking for.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ OUR PILLARS ══════════ -->
+<section class="pillars" id="pillars">
+  <div class="pillars-bg"></div>
+  <div class="wrap">
+    <div class="pillars-grid">
+      <div class="pillars-header">
+        <div class="pill"><span class="dot"></span> How We Work Together</div>
+        <h2>Our Partnership</h2>
+        <p class="pillars-sub">Every engagement starts the same way — with a thorough audit and assessment of your current marketing. Before we recommend anything, we need to understand where you are: what's working, what's costing you money without results, and where the real opportunities are.</p>
+      </div>
+      <div class="pillars-cards">
+
+        <div class="p-card" onclick="togglePillar(this)">
+          <div class="p-card-head">
+            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+            <div class="p-titles">
+              <div class="p-title">Strategy</div>
+              <div class="p-desc" style="margin-bottom:12px">Knowing where to focus and why.</div>
+            </div>
+            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
+              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="p-body"><div class="p-body-inner">
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:18px">A strategy that ignores your market won't work. We research your competitors, your geography, and your practice areas to <span class="green">find the gaps others are missing.</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:18px">We map out <span class="green">market saturation costs</span> — what it actually takes to compete for visibility in your area across <span class="green">organic search</span>, <span class="green">AI platforms</span>, <span class="green">local SEO</span>, <span class="green">paid ads</span>, and <span class="green">social media</span>. Too many firms overspend in saturated channels or underspend where there's real opportunity. We identify where your competitors are concentrated, where the gaps are, and where your marketing dollars will generate the highest return relative to the local cost of acquisition.</p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:18px"><span class="green">Competitive analysis. Regional benchmarking. Intake modeling.</span> Every strategy we build is rooted in data specific to your market.</p>
+            <a href="#schedule" class="btn p-cta">Schedule a Strategy Session</a>
+          </div></div>
+        </div>
+
+        <div class="p-card" onclick="togglePillar(this)">
+          <div class="p-card-head">
+            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M9 7l-4 5 4 5"/><path d="M15 7l4 5-4 5"/></svg></div>
+            <div class="p-titles">
+              <div class="p-title">Vendor Oversight</div>
+              <div class="p-desc" style="margin-bottom:24px">Making sure the agencies you pay are actually delivering.</div>
+            </div>
+            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
+              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="p-body"><div class="p-body-inner">
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px"><span class="green">You're Being Overcharged</span> — and You Don't Even Know It</p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Too many agencies bill for work that's hard to measure and harder to verify. <span class="green">We change that.</span> We audit every invoice, deliverable, and contract — so you always know what you're paying for and whether it's working.</p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Your Agency Is Also <span class="green">Working For Your Competition</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">If your agency also represents competing firms in your area, <span class="green">you're funding your own competition.</span> We find these conflicts and help provide solutions that work for you.</p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">You're Not Getting the <span class="green">Attention You're Paying For</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Most agencies spread their teams too thin. Your account becomes one of many — and <span class="green">the work reflects it.</span> We hold your vendors accountable for the time, attention, and strategy your firm is paying for.</p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Nobody Can Tell You What Your Marketing Is <span class="green">Actually Earning</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px"><span class="green">We report on results.</span> We tie your marketing spend directly to signed cases so you know exactly what your investment is producing.</p>
+
+            <a href="#schedule" class="btn p-cta">Get a Vendor Audit</a>
+          </div></div>
+        </div>
+
+        <div class="p-card" onclick="togglePillar(this)">
+          <div class="p-card-head">
+            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="p-titles">
+              <div class="p-title">Intake Optimization</div>
+              <div class="p-desc" style="margin-bottom:24px">Turning more leads into signed clients.</div>
+            </div>
+            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
+              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="p-body"><div class="p-body-inner">
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Your Marketing Is Generating Leads — <span class="green">Your Intake Is Losing Them</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Getting the phone to ring is only half the battle. If your intake process is slow, inconsistent, or unstructured, <span class="green">qualified leads are walking out the door</span> — and you're paying for every one of them.</p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">We Provide <span class="green">Call Coaching</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">We audit your calls. We identify where leads drop off. And we help your team <span class="green">turn more conversations into consultations.</span></p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Turning Your Intake Team Into a <span class="green">Competitive Advantage</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">We don't just identify problems — we help fix them. Scripts, call frameworks, follow-up cadences, and accountability structures that turn your intake team into <span class="green">a signing machine.</span></p>
+
+            <a href="#schedule" class="btn p-cta">Optimize Your Intake</a>
+          </div></div>
+        </div>
+
+        <div class="p-card" onclick="togglePillar(this)">
+          <div class="p-card-head">
+            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/><path d="M15 8h4v4"/></svg></div>
+            <div class="p-titles">
+              <div class="p-title">Performance Tracking</div>
+              <div class="p-desc" style="margin-bottom:24px">Measuring what's working and cutting what isn't.</div>
+            </div>
+            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
+              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="p-body"><div class="p-body-inner">
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">If You Can't <span class="green">Measure It</span>, You Can't Manage It</p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">If you don't know which channels are producing signed cases, you're guessing with your budget. We <span class="green">connect the dots</span> between spend and results so every dollar is accounted for.</p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px"><span class="green">AI Platforms</span> Are Changing the Game — Your Strategy Needs to Keep Up</p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">AI is creating new ways for clients to find attorneys. We make sure your strategy <span class="green">keeps pace</span> so you're not leaving opportunities to your competitors.</p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Your Marketing Strategy Should <span class="green">Change Multiple Times a Year</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Your marketing plan shouldn't sit on a shelf for 12 months. We monitor results continuously and <span class="green">redirect your budget</span> away from what's not working, to what is working.</p>
+
+            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">We Cut What Isn't Working — <span class="green">Before It Costs You More</span></p>
+            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Too many firms stay locked into campaigns, vendors, or channels out of habit — not because they're performing. We take an <span class="green">objective, data-driven approach</span> to every line item in your marketing spend. If a channel isn't producing a measurable return, we flag it, present the evidence, and recommend where those dollars should go instead. Your marketing budget is finite — we make sure none of it is wasted on strategies that stopped working months ago.</p>
+
+            <a href="#schedule" class="btn p-cta">Start Tracking Performance</a>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ TESTIMONIAL ══════════ -->
+<section class="testi" id="testimonial">
+  <div class="testi-glow"></div>
+  <div class="wrap">
+    <div style="text-align:center;max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <p style="font-size:clamp(22px,2.4vw,30px);font-weight:700;line-height:1.4;letter-spacing:-.015em;color:var(--text-white)">Why <span class="green">Choose Us</span></p>
+      <p style="font-size:17px;line-height:1.75;color:var(--text-muted)">We partner directly with firms to bring <span class="green">clarity</span>, <span class="green">accountability</span>, and <span class="green">results</span> to their marketing. Our <span class="green">concierge model</span> provides experienced, hands-on guidance at every step. The relationships we build are rooted in <span class="green">performance, trust, and results</span>.</p>
+      <p style="font-size:17px;line-height:1.75;color:var(--text-muted)">Our work sits at the intersection of <span class="green">strategy</span>, <span class="green">execution oversight</span>, <span class="green">vendor management</span>, <span class="green">intake optimization</span>, <span class="green">performance measurement</span>, and <span class="green">trusted vendor recommendations</span> to include <span class="green">in-house services</span>. We guide your firm's marketing function from <span class="green">end-to-end</span> to ensure that marketing investments not only work harder, but are <span class="green">safeguarded</span>.</p>
+      <p style="font-size:17px;line-height:1.75;color:var(--text-muted)">The legal marketing industry has a problem with <span class="green">accountability</span>. Most agencies are built to scale their client base — not to protect yours. <span class="green">Law Marketing Ally</span> was built differently.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ SCHEDULE ════════════ -->
+<section class="schedule" id="schedule">
+  <div class="schedule-glow"></div>
+  <div class="wrap schedule-inner">
+    <div class="schedule-hdr">
+      <div class="pill"><span class="dot"></span> Free Audit</div>
+      <h2>Let's Start a Conversation</h2>
+      <p class="schedule-sub">Pick a time that works for you — and let's see how we can help.</p>
+    </div>
+    <div class="schedule-widget">
+      <iframe
+        src="https://calendly.com/roger-lawmarketingally/30min"
+        title="Schedule a Free Audit"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="footer-mtn">
+    <svg viewBox="0 0 1920 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+      <path d="M0 280L200 140L400 200L640 60L880 180L1100 30L1320 150L1540 80L1760 130L1920 90V280Z" fill="#0a101c" opacity="0.45"/>
+      <path d="M0 280L150 220L300 250L500 185L700 240L900 165L1100 225L1300 185L1500 225L1700 195L1920 215V280Z" fill="#0a101c" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="footer-slant"></div>
+  <div class="wrap footer-inner">
+    <div class="footer-cta-row">
+      <p class="footer-cta-hl">Make Your <span class="green">Success</span> Our Agenda.</p>
+      <a href="#schedule" class="btn footer-cta-btn">Schedule Now</a>
+    </div>
+    <div class="footer-rule"></div>
+    <div class="footer-cols">
+      <div class="footer-brand">
+        <svg width="180" height="90" viewBox="0 0 280 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="aGradFt" x1="0.3" y1="0" x2="0.7" y2="1">
+              <stop offset="0%" stop-color="#f0a030"/>
+              <stop offset="60%" stop-color="#e88b1f"/>
+              <stop offset="100%" stop-color="#d47518"/>
+            </linearGradient>
+          </defs>
+          <polygon points="140,4 80,80 140,80" fill="url(#aGradFt)"/>
+          <polygon points="140,28 190,80 140,80" fill="#1b2a4a"/>
+          <path d="M92,68 C120,55 165,58 195,62" stroke="#e88b1f" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <text x="52" y="106" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="700" letter-spacing="3">LAW</text>
+          <text x="112" y="106" fill="#e88b1f" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="700" letter-spacing="2">MARKETING</text>
+          <line x1="62" y1="122" x2="108" y2="122" stroke="#e88b1f" stroke-width="1.5"/>
+          <text x="114" y="127" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="18" font-weight="700" letter-spacing="5">ALLY</text>
+          <line x1="186" y1="122" x2="232" y2="122" stroke="#e88b1f" stroke-width="1.5"/>
+        </svg>
+        <p class="footer-tagline">Serving Law Firms Nationally</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div></div><!-- spacer -->
+      <div class="footer-col">
+        <div class="footer-col-label">Contact</div>
+        <a href="tel:+18017012030" class="footer-link">(602) 694-2905</a>
+        <a href="mailto:roger@lawmarketingally.com" class="footer-link">roger@lawmarketingally.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">©2026 CLIXSY, All rights reserved. Design by <a href="https://rook.studio" target="_blank" rel="noopener noreferrer">Rook.</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Navbar scroll ──────────────────────────────────── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10)
+},{passive:true})
+
+/* ── Mobile menu ────────────────────────────────────── */
+function toggleMenu(){
+  document.getElementById('mobMenu').classList.toggle('open')
+  document.getElementById('mobOverlay').classList.toggle('open')
+}
+function closeMenu(){
+  document.getElementById('mobMenu').classList.remove('open')
+  document.getElementById('mobOverlay').classList.remove('open')
+}
+
+/* ── Pillar accordion ───────────────────────────────── */
+function togglePillar(card){
+  const wasOpen = card.classList.contains('open')
+  document.querySelectorAll('.p-card').forEach(c=>c.classList.remove('open'))
+  if(!wasOpen) card.classList.add('open')
+}
+
+
+/* ── Build platform logo marquee ───────────────────── */
+const gaLogoSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="36" height="36"><path fill="#F9AB00" d="M469.3 209.2c-23.5 0-42.6 19.1-42.6 42.7v217.5c0 23.5 19.1 42.6 42.6 42.6s42.7-19.1 42.7-42.6V251.9c0-23.6-19.1-42.7-42.7-42.7z"/><path fill="#E37400" d="M256 299.4c-23.5 0-42.7 19.1-42.7 42.7v127.3c0 23.5 19.1 42.6 42.7 42.6s42.7-19.1 42.7-42.6V342.1c0-23.6-19.2-42.7-42.7-42.7z"/><path fill="#E37400" d="M42.7 384.3C19.1 384.3 0 403.4 0 427s19.1 42.7 42.7 42.7c23.5 0 42.7-19.1 42.7-42.7-.1-23.6-19.2-42.7-42.7-42.7z"/></svg>`;
+
+const crLogoIMG = `<img src="https://www.freelogovectors.net/wp-content/uploads/2021/09/callrail-logo-freelogovectors.net_.png" alt="CallRail Logo" height="36" style="height:36px;width:auto;filter:brightness(1.2)">`;
+
+const platformLogos = [
+  {name:'Google Analytics', icon: gaLogoSVG},
+  {name:'CallRail', icon: crLogoIMG},
+  {name:'Google Analytics', icon: gaLogoSVG},
+  {name:'CallRail', icon: crLogoIMG},
+  {name:'Google Analytics', icon: gaLogoSVG},
+  {name:'CallRail', icon: crLogoIMG},
+  {name:'Google Analytics', icon: gaLogoSVG},
+  {name:'CallRail', icon: crLogoIMG},
+  {name:'Google Analytics', icon: gaLogoSVG},
+  {name:'CallRail', icon: crLogoIMG},
+]
+
+const logoTrack = document.getElementById('logoTrack')
+logoTrack.innerHTML = platformLogos.map(p=>`<div class="logo-item" style="display:flex;align-items:center;gap:8px">${p.icon}<span>${p.name}</span></div>`).join('')
+</script>
+</body>
+</html>

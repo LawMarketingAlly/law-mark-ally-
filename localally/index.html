@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arizona Law Firm Local SEO &amp; Reputation Management | LocalAlly™ by Law Marketing Ally</title>
+  <meta name="description" content="LocalAlly™ helps solo and small law firms in Phoenix, Scottsdale, and Tucson dominate Google Maps and build 5-star reputations. Done-for-you Local SEO, GBP management, and review generation. Claim your free local presence audit." />
+
+  <!-- ── NOINDEX — Remove this tag when ready for organic search traffic ── -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- ── CANONICAL ── -->
+  <link rel="canonical" href="https://www.lawmarketingally.com/localally" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arizona Law Firm Local SEO &amp; Reputation Management | LocalAlly™" />
+  <meta property="og:description" content="Done-for-you Local SEO and Reputation Management for solo and small law firms in Arizona. See exactly where your firm ranks on Google Maps — free local presence audit included." />
+  <meta property="og:url" content="https://www.lawmarketingally.com/localally" />
+  <meta property="og:site_name" content="Law Marketing Ally" />
+  <meta property="og:image" content="https://www.lawmarketingally.com/Roger.png" />
+
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arizona Law Firm Local SEO &amp; Reputation Management | LocalAlly™" />
+  <meta name="twitter:description" content="Done-for-you Local SEO and Reputation Management for solo and small law firms in Arizona. Free local presence audit — no commitment required." />
+  <meta name="twitter:image" content="https://www.lawmarketingally.com/Roger.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── DESIGN TOKENS ── */
+    :root {
+      --font: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      --accent:        #e88b1f;
+      --accent-light:  #f0a030;
+      --accent-dark:   #d47518;
+      --bg-black:      #000002;
+      --bg-dark:       #030305;
+      --bg-section:    #0a101c;
+      --bg-card:       #0f1825;
+      --text-white:    #fff;
+      --text-body:     rgba(224,224,224,.86);
+      --text-muted:    rgba(255,255,255,.58);
+      --border:        rgba(255,255,255,.1);
+      --border-accent: rgba(232,139,31,.3);
+      --radius-card:   18px;
+      --radius-btn:    88px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-black);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── UTILITIES ── */
+    .accent   { color: var(--accent); }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .text-center { text-align: center; }
+
+    .pill-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,139,31,.10);
+      border: 1px solid rgba(232,139,31,.25);
+      color: var(--accent);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: var(--radius-btn);
+    }
+    .pill-label::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--accent); border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font); font-weight: 700; border: none;
+      cursor: pointer; border-radius: var(--radius-btn);
+      transition: background .2s, transform .15s, opacity .2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      font-size: 16px; padding: 15px 30px;
+    }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .btn-primary-lg {
+      background: var(--accent); color: #fff;
+      font-size: 18px; padding: 18px 40px;
+    }
+    .btn-primary-lg:hover { background: var(--accent-light); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent; color: var(--text-white);
+      font-size: 14px; font-weight: 500;
+      padding: 10px 20px; border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--border-accent); color: var(--accent); }
+    .arrow { font-size: 18px; }
+
+    /* ══════════════════════════════════════
+       HEADER — No nav links. CTA only.
+       ══════════════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(0,0,2,.93);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between; padding: 13px 0;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-phone {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 16px; border-radius: var(--radius-btn);
+      border: 1px solid var(--border);
+      color: var(--text-muted); font-size: 14px; font-weight: 500;
+      transition: color .2s, border-color .2s;
+    }
+    .nav-phone:hover { color: var(--text-white); border-color: rgba(255,255,255,.2); }
+    .nav-phone svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════
+       HERO — Above the fold conversion
+       ══════════════════════════════════════ */
+    .hero {
+      background: var(--bg-black); padding: 88px 0 72px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -180px; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 700px;
+      background: radial-gradient(ellipse, rgba(232,139,31,.09) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-eyebrow { margin-bottom: 28px; }
+    .hero h1 {
+      font-size: clamp(42px, 6.5vw, 76px);
+      font-weight: 800; color: var(--text-white);
+      line-height: 1.06; letter-spacing: -.025em;
+      margin-bottom: 22px;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 1.9vw, 19px);
+      color: var(--text-muted); max-width: 640px;
+      margin: 0 auto 36px; line-height: 1.65;
+    }
+    .hero-ctas {
+      display: flex; align-items: center;
+      justify-content: center; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .hero-guarantee {
+      font-size: 13px; color: var(--text-muted);
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px;
+    }
+    .hero-guarantee svg { color: var(--accent); flex-shrink: 0; }
+
+    /* trust bar */
+    .trust-bar {
+      margin-top: 52px; padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: center; gap: 48px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .trust-item-icon {
+      width: 38px; height: 38px;
+      background: rgba(232,139,31,.08);
+      border: 1px solid rgba(232,139,31,.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .trust-item-text strong {
+      display: block; font-size: 14px;
+      font-weight: 700; color: var(--text-white);
+    }
+    .trust-item-text span {
+      font-size: 12px; color: var(--text-muted);
+    }
+
+    /* ══════════════════════════════════════
+       PROBLEM — Pain agitation
+       ══════════════════════════════════════ */
+    .problem-section {
+      background: var(--bg-section);
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .problem-header { text-align: center; margin-bottom: 52px; }
+    .problem-header h2 {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.02em;
+      margin-top: 14px; line-height: 1.1;
+    }
+    .problem-header p {
+      font-size: 17px; color: var(--text-muted);
+      max-width: 580px; margin: 14px auto 0;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .problem-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 28px 26px;
+      transition: border-color .2s, transform .2s;
+    }
+    .problem-card:hover { border-color: var(--border-accent); transform: translateY(-2px); }
+    .problem-card-icon {
+      width: 46px; height: 46px;
+      background: rgba(232,139,31,.08);
+      border: 1px solid rgba(232,139,31,.18);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+    }
+    .problem-card h3 {
+      font-size: 16px; font-weight: 700;
+      color: var(--text-white); margin-bottom: 10px;
+    }
+    .problem-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+    .problem-cta { text-align: center; margin-top: 48px; }
+    .problem-cta p { font-size: 15px; color: var(--text-muted); margin-top: 14px; }
+
+    /* ══════════════════════════════════════
+       SOLUTION INTRO
+       ══════════════════════════════════════ */
+    .solution-section {
+      background: var(--bg-black);
+      padding: 88px 0; text-align: center;
+    }
+    .solution-section h2 {
+      font-size: clamp(30px, 4.5vw, 52px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.025em;
+      line-height: 1.1; margin: 16px 0 22px;
+    }
+    .solution-section > .container > p {
+      font-size: clamp(16px, 1.8vw, 18px);
+      color: var(--text-body); max-width: 700px;
+      margin: 0 auto 14px; line-height: 1.75;
+    }
+    .solution-divider {
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 2px; margin: 30px auto 0;
+    }
+
+    /* ══════════════════════════════════════
+       SERVICES — Benefits-first
+       ══════════════════════════════════════ */
+    .services-section {
+      background: var(--bg-section); padding: 88px 0;
+      border-top: 1px solid var(--border);
+    }
+    .services-header { text-align: center; margin-bottom: 56px; }
+    .services-header h2 {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.02em; margin-top: 14px;
+    }
+    .services-header p {
+      color: var(--text-muted); font-size: 16px;
+      max-width: 540px; margin: 12px auto 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 22px; padding: 38px;
+      transition: border-color .25s, transform .2s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      opacity: 0; transition: opacity .25s;
+    }
+    .service-card:hover { border-color: var(--border-accent); transform: translateY(-4px); }
+    .service-card:hover::before { opacity: 1; }
+    .service-badge {
+      display: inline-block;
+      background: rgba(232,139,31,.12); color: var(--accent);
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 6px;
+      margin-bottom: 18px;
+    }
+    .service-card h3 {
+      font-size: 22px; font-weight: 800; color: var(--text-white);
+      letter-spacing: -.015em; margin-bottom: 10px;
+    }
+    .service-card > p {
+      font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px;
+    }
+    .service-outcome {
+      background: rgba(232,139,31,.07);
+      border: 1px solid rgba(232,139,31,.18);
+      border-radius: 10px; padding: 14px 16px;
+      margin-bottom: 24px;
+      font-size: 14px; color: var(--text-body); line-height: 1.5;
+    }
+    .service-outcome strong { color: var(--accent); }
+    .service-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .service-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--text-body); line-height: 1.5;
+    }
+    .service-list li::before {
+      content: '';
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
+      background: rgba(232,139,31,.1);
+      border: 1px solid rgba(232,139,31,.28);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%23e88b1f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: center;
+    }
+    .services-cta { text-align: center; margin-top: 52px; }
+
+    /* ══════════════════════════════════════
+       HOW IT WORKS
+       ══════════════════════════════════════ */
+    .how-section {
+      background: var(--bg-black); padding: 88px 0;
+      border-top: 1px solid var(--border);
+    }
+    .how-header { text-align: center; margin-bottom: 64px; }
+    .how-header h2 {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.02em; margin-top: 14px;
+    }
+    .how-header p { color: var(--text-muted); font-size: 16px; max-width: 500px; margin: 12px auto 0; }
+    .steps-wrapper {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 40px; position: relative;
+    }
+    .steps-wrapper::before {
+      content: ''; position: absolute;
+      top: 35px; left: calc(16.66% + 36px); right: calc(16.66% + 36px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-accent) 30%, var(--border-accent) 70%, transparent);
+    }
+    .step { text-align: center; }
+    .step-num {
+      width: 70px; height: 70px;
+      background: var(--bg-section);
+      border: 1px solid var(--border-accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; color: var(--accent);
+      margin: 0 auto 22px; position: relative; z-index: 1;
+    }
+    .step h3 { font-size: 18px; font-weight: 700; color: var(--text-white); margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ══════════════════════════════════════
+       VIDEO SECTION — Meet Roger
+       ══════════════════════════════════════ */
+    .video-section {
+      background: var(--bg-section); padding: 88px 0;
+      border-top: 1px solid var(--border);
+    }
+    .video-section-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .video-section-copy .pill-label { margin-bottom: 20px; }
+    .video-section-copy h2 {
+      font-size: clamp(28px, 3.5vw, 42px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.02em;
+      line-height: 1.15; margin-bottom: 20px;
+    }
+    .video-section-copy p {
+      font-size: 16px; color: var(--text-muted);
+      line-height: 1.7; margin-bottom: 16px;
+    }
+    .video-section-copy p:last-of-type { margin-bottom: 0; }
+    .video-section-copy .video-byline {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 28px; padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .video-byline-avatar {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      overflow: hidden; border: 2px solid var(--border-accent);
+    }
+    .video-byline-avatar img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    }
+    .video-byline-info .name { font-size: 15px; font-weight: 700; color: var(--text-white); }
+    .video-byline-info .title { font-size: 13px; color: var(--text-muted); }
+    .video-placeholder-wrap {
+      position: relative; border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 0 48px rgba(232,139,31,.12);
+      aspect-ratio: 16/9;
+      background: var(--bg-card);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+      cursor: pointer;
+    }
+    .video-placeholder-wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(232,139,31,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .video-play-btn {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 12px rgba(232,139,31,.18), 0 0 0 24px rgba(232,139,31,.07);
+      transition: transform .2s, background .2s;
+      position: relative; z-index: 1;
+    }
+    .video-placeholder-wrap:hover .video-play-btn {
+      background: var(--accent-light); transform: scale(1.07);
+    }
+    .video-play-btn svg { margin-left: 5px; }
+    .video-placeholder-label {
+      font-size: 13px; font-weight: 600; color: var(--text-muted);
+      letter-spacing: .06em; text-transform: uppercase;
+      position: relative; z-index: 1;
+    }
+    .video-duration {
+      position: absolute; bottom: 14px; right: 14px;
+      background: rgba(0,0,2,.7); color: var(--text-muted);
+      font-size: 12px; font-weight: 600; padding: 3px 8px;
+      border-radius: 4px; z-index: 1;
+    }
+    @media (max-width: 768px) {
+      .video-section-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ══════════════════════════════════════
+       AUTHORITY / WHY LMA
+       ══════════════════════════════════════ */
+    .authority-section {
+      background: var(--bg-black); padding: 88px 0;
+      border-top: 1px solid var(--border);
+    }
+    .authority-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+    }
+    .authority-content .pill-label { margin-bottom: 20px; }
+    .authority-content h2 {
+      font-size: clamp(26px, 3.8vw, 42px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.02em; line-height: 1.15; margin-bottom: 20px;
+    }
+    .authority-content p {
+      font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 16px;
+    }
+    .authority-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px;
+      transition: border-color .2s;
+    }
+    .stat-card:hover { border-color: var(--border-accent); }
+    .stat-num {
+      font-size: 34px; font-weight: 800; color: var(--accent);
+      letter-spacing: -.02em; line-height: 1; margin-bottom: 6px;
+    }
+    .stat-label { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+
+    /* ── AI Future-Proof Callout ── */
+    .ai-callout {
+      background: rgba(232,139,31,.07);
+      border: 1px solid rgba(232,139,31,.22);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px; padding: 20px 22px;
+      margin-top: 24px;
+    }
+    .ai-callout p {
+      font-size: 14px; color: var(--text-body);
+      line-height: 1.7; margin: 0;
+    }
+    .ai-callout strong { color: var(--accent); }
+
+    /* ══════════════════════════════════════
+       FAQ — Objection handling
+       ══════════════════════════════════════ */
+    .faq-section {
+      background: var(--bg-section); padding: 88px 0;
+      border-top: 1px solid var(--border);
+    }
+    .faq-header { text-align: center; margin-bottom: 52px; }
+    .faq-header h2 {
+      font-size: clamp(28px, 4vw, 42px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.02em; margin-top: 14px;
+    }
+    .faq-header p { color: var(--text-muted); font-size: 16px; max-width: 500px; margin: 12px auto 0; }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; transition: border-color .2s;
+    }
+    .faq-item:hover { border-color: var(--border-accent); }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 22px 24px; cursor: pointer; text-align: left;
+    }
+    .faq-question span {
+      font-family: var(--font); font-size: 16px; font-weight: 700;
+      color: var(--text-white); line-height: 1.4;
+    }
+    .faq-icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: rgba(232,139,31,.1);
+      border: 1px solid rgba(232,139,31,.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 18px; font-weight: 300;
+      transition: transform .25s, background .2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(232,139,31,.2); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0 24px;
+    }
+    .faq-answer p { font-size: 15px; color: var(--text-muted); line-height: 1.75; }
+    .faq-item.open .faq-answer { max-height: 1000px; padding: 0 24px 22px; }
+    .faq-cta { text-align: center; margin-top: 48px; }
+
+    /* ══════════════════════════════════════
+       FINAL CTA — Close with urgency
+       ══════════════════════════════════════ */
+    .cta-section {
+      background: var(--bg-black); padding: 108px 0;
+      text-align: center; position: relative; overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .cta-section::before {
+      content: ''; position: absolute;
+      bottom: -120px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(232,139,31,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-size: clamp(34px, 5.5vw, 64px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.025em; line-height: 1.05;
+      margin: 14px 0 18px;
+    }
+    .cta-section p {
+      font-size: clamp(16px, 1.8vw, 18px); color: var(--text-muted);
+      max-width: 540px; margin: 0 auto 40px; line-height: 1.7;
+    }
+    .cta-risk-reversal {
+      margin-top: 24px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; flex-wrap: wrap;
+    }
+    .cta-risk-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--text-muted);
+    }
+    .cta-risk-item svg { color: var(--accent); flex-shrink: 0; }
+    .urgency-note {
+      display: inline-block; margin-top: 28px;
+      background: rgba(232,139,31,.08);
+      border: 1px solid rgba(232,139,31,.2);
+      border-radius: 10px; padding: 10px 20px;
+      font-size: 14px; color: var(--text-body);
+    }
+    .urgency-note strong { color: var(--accent); }
+
+    /* ══════════════════════════════════════
+       FOOTER — Minimal
+       ══════════════════════════════════════ */
+    footer {
+      background: var(--bg-black);
+      border-top: 1px solid var(--border);
+      padding: 44px 0 28px;
+    }
+    .footer-inner {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 32px; flex-wrap: wrap;
+      padding-bottom: 28px; margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand p { font-size: 13px; color: var(--text-muted); margin-top: 10px; }
+    .footer-social { display: flex; gap: 8px; margin-top: 14px; }
+    .social-btn {
+      width: 34px; height: 34px; border: 1px solid var(--border);
+      border-radius: 8px; display: flex; align-items: center;
+      justify-content: center; color: var(--text-muted); font-size: 14px;
+      transition: border-color .2s, color .2s;
+    }
+    .social-btn:hover { border-color: var(--border-accent); color: var(--accent); }
+    .footer-contact h4 {
+      font-size: 11px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;
+    }
+    .footer-contact a {
+      display: block; font-size: 14px; color: var(--text-body);
+      margin-bottom: 5px; transition: color .2s;
+    }
+    .footer-contact a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+
+    /* ══════════════════════════════════════
+       HEAT MAP SECTION
+       ══════════════════════════════════════ */
+    .heatmap-section {
+      background: var(--bg-section); padding: 88px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .heatmap-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .heatmap-content .pill-label { margin-bottom: 20px; }
+    .heatmap-content h2 {
+      font-size: clamp(26px, 3.6vw, 42px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.022em; line-height: 1.12; margin-bottom: 20px;
+    }
+    .heatmap-content p {
+      font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 14px;
+    }
+    .heatmap-visual-wrap { display: flex; flex-direction: column; gap: 12px; }
+    .heatmap-label-bar { text-align: center; }
+    .heatmap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px; padding: 24px; overflow: hidden;
+    }
+    .heatmap-keyword-row {
+      margin-bottom: 16px; text-align: center;
+    }
+    .heatmap-kw-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      border-radius: 6px; padding: 5px 12px;
+      font-size: 12px; color: var(--text-muted);
+      font-family: 'Geist Mono', monospace;
+    }
+    .heatmap-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px; margin-bottom: 18px;
+    }
+    .hm-dot {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; color: rgba(0,0,0,.75);
+      transition: transform .2s;
+      cursor: default;
+      opacity: 0;
+      animation: dotReveal .4s ease forwards;
+    }
+    .hm-dot:hover { transform: scale(1.25); z-index: 2; }
+    @keyframes dotReveal {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .heatmap-legend {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; flex-wrap: wrap; margin-bottom: 14px;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .heatmap-footer-note {
+      text-align: center; font-size: 12px; color: var(--text-muted);
+      border-top: 1px solid var(--border); padding-top: 12px;
+    }
+    .heatmap-cta-note {
+      text-align: center; font-size: 13px; color: var(--text-muted);
+      font-style: italic;
+    }
+    @media (max-width: 900px) {
+      .heatmap-inner { grid-template-columns: 1fr; gap: 44px; }
+    }
+
+    /* ══════════════════════════════════════
+       CONCIERGE DIFFERENTIATOR
+       ══════════════════════════════════════ */
+    .concierge-section {
+      background: var(--bg-black); padding: 88px 0;
+      border-top: 1px solid var(--border);
+    }
+    .concierge-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+    }
+    .concierge-content .pill-label { margin-bottom: 20px; }
+    .concierge-content h2 {
+      font-size: clamp(26px, 3.8vw, 44px); font-weight: 800;
+      color: var(--text-white); letter-spacing: -.022em; line-height: 1.12; margin-bottom: 20px;
+    }
+    .concierge-content p {
+      font-size: 16px; color: var(--text-muted); line-height: 1.75; margin-bottom: 16px;
+    }
+    .concierge-callout {
+      background: rgba(232,139,31,.07);
+      border: 1px solid rgba(232,139,31,.22);
+      border-radius: 14px; padding: 22px 24px; margin-top: 8px; margin-bottom: 24px;
+    }
+    .concierge-callout p {
+      font-size: 15px; color: var(--text-body); line-height: 1.65; margin: 0;
+    }
+    .concierge-callout strong { color: var(--accent); }
+    .concierge-steps { display: flex; flex-direction: column; gap: 14px; }
+    .concierge-step {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px;
+      transition: border-color .2s;
+    }
+    .concierge-step:hover { border-color: var(--border-accent); }
+    .concierge-step-num {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: rgba(232,139,31,.1); border: 1px solid rgba(232,139,31,.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800; color: var(--accent);
+    }
+    .concierge-step-text h4 {
+      font-size: 15px; font-weight: 700; color: var(--text-white); margin-bottom: 5px;
+    }
+    .concierge-step-text p {
+      font-size: 13px; color: var(--text-muted); line-height: 1.55; margin: 0;
+    }
+
+    /* ══════════════════════════════════════
+       STICKY MOBILE CTA BAR
+       ══════════════════════════════════════ */
+    .mobile-cta-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 300; padding: 12px 20px;
+      background: rgba(0,0,2,.96); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+    }
+    .mobile-cta-bar .btn { width: 100%; justify-content: center; font-size: 16px; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .authority-inner { grid-template-columns: 1fr; gap: 48px; }
+      .concierge-inner { grid-template-columns: 1fr; gap: 48px; }
+      .steps-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .steps-wrapper::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .trust-bar { gap: 24px; }
+      .authority-stats { grid-template-columns: 1fr 1fr; }
+      .nav-phone { display: none; }
+      .mobile-cta-bar { display: block; }
+      body { padding-bottom: 76px; }
+      .cta-risk-reversal { flex-direction: column; gap: 10px; }
+    }
+    @media (max-width: 420px) {
+      .authority-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- ── SCHEMA: LocalBusiness + Service ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Law Marketing Ally",
+    "description": "Done-for-you Local SEO and Reputation Management for solo and small law firms in Arizona. Specializing in Google Business Profile optimization, citation building, review generation, and local entity strategy.",
+    "url": "https://www.lawmarketingally.com",
+    "telephone": "+16026942905",
+    "founder": {
+      "@type": "Person",
+      "name": "Roger Leathers",
+      "jobTitle": "Founder",
+      "worksFor": "Law Marketing Ally"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Phoenix", "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona" },
+      { "@type": "City", "name": "Scottsdale", "sameAs": "https://en.wikipedia.org/wiki/Scottsdale,_Arizona" },
+      { "@type": "City", "name": "Tucson", "sameAs": "https://en.wikipedia.org/wiki/Tucson,_Arizona" },
+      { "@type": "City", "name": "Tempe", "sameAs": "https://en.wikipedia.org/wiki/Tempe,_Arizona" },
+      { "@type": "State", "name": "Arizona" }
+    ],
+    "knowsAbout": [
+      "Local SEO for Law Firms",
+      "Google Business Profile Optimization",
+      "Reputation Management",
+      "Review Generation",
+      "Legal Marketing",
+      "Local Entity SEO",
+      "AI Search Optimization"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "LocalAlly™ Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Local SEO & Google Business Profile Optimization",
+            "description": "Full GBP audit and optimization, citation building, keyword strategy, competitor gap analysis, heat map ranking reports, and local landing page content creation for Arizona law firms."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Reputation Management & Review Generation",
+            "description": "Concierge-driven review generation including personal outreach calls, automated review request sequences, reputation monitoring, and monthly reporting for Arizona law firms."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Free Local Presence Audit",
+            "description": "A complimentary GBP heat map and online reputation audit for Arizona law firms — delivered before your 30-minute strategy call with no commitment required.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ── SCHEMA: FAQ ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What exactly happens on the free local presence audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Before the call, we do two things: run a detailed review of your GBP with a heat map of your firm across your market along with a comprehensive audit of your online reputation. On the call, we walk through both together and look at where you rank neighborhood by neighborhood, and what your reviews are saying to prospective clients. You'll leave with a complete picture of your local presence and a clear plan — with no obligation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to start seeing results in Google Maps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most clients begin to see measurable movement in local rankings within 60–90 days. Local SEO is not instant because Google needs time to recognize, verify, and reward the local signals we build. That said, many clients see early wins sooner, particularly when there are clear gaps in GBP completeness or citation consistency that we can address quickly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I already have a website. Do I still need LocalAlly™?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, because your website and your Google Maps presence are separate ranking systems. Many law firms with excellent websites rank poorly in the local map pack because their Google Business Profile, citation landscape, and online reputation are neglected. LocalAlly™ works alongside your existing website — strengthening the local and reputation signals that your entire online marketing strategy depends on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there long-term contracts? What's the commitment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No long-term contracts. Local SEO and reputation management are ongoing programs, and we recommend a minimum of 3–6 months to see meaningful results. We earn your business month to month. If you're not satisfied with what we're doing, you can end the engagement. We believe our strong results are the reason you stay — not a contract."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "My current agency says they already handle local SEO. Isn't that covered?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most law firms are already paying for local SEO as part of a broader marketing service, but what they're actually receiving is a generic, largely automated service. What actually moves the needle is a unique strategy built around competitive analysis and a local entity approach: active GBP management, citation integrity, a structured review program, and local content signals working together as a system. The free local presence audit will show you exactly what's in place and what isn't."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much time will this require from me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Very little. After onboarding (which typically requires a 45-minute call), LocalAlly™ is a done-for-you program. You'll receive a monthly report and a brief check-in to review results. We're not here to create more work for you — we're here to handle this so you can focus on practicing law."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       HEADER — No nav links. CRO focused.
+       ══════════════════════════════════════ -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-logo">
+          <svg width="150" height="76" viewBox="0 0 280 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0.3" y1="0" x2="0.7" y2="1">
+                <stop offset="0%" stop-color="#f0a030"/>
+                <stop offset="60%" stop-color="#e88b1f"/>
+                <stop offset="100%" stop-color="#d47518"/>
+              </linearGradient>
+            </defs>
+            <polygon points="140,4 80,80 140,80" fill="url(#g1)"/>
+            <polygon points="140,28 190,80 140,80" fill="#1b2a4a"/>
+            <path d="M92,68 C120,55 165,58 195,62" stroke="#e88b1f" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <text x="52" y="106" fill="white" font-family="Georgia,serif" font-size="20" font-weight="700" letter-spacing="3">LAW</text>
+            <text x="112" y="106" fill="#e88b1f" font-family="Georgia,serif" font-size="20" font-weight="700" letter-spacing="2">MARKETING</text>
+            <line x1="52" y1="112" x2="230" y2="112" stroke="#e88b1f" stroke-width="0.8" opacity="0.6"/>
+            <text x="114" y="130" fill="white" font-family="Georgia,serif" font-size="18" font-weight="700" letter-spacing="5">ALLY</text>
+            <line x1="52" y1="136" x2="230" y2="136" stroke="#e88b1f" stroke-width="0.8" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="nav-right">
+          <a href="tel:6026942905" class="nav-phone">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2.5C2 2.5 4 0 5.5 2L6.5 4C6.5 4 7 5 6 5.5C5 6 5.5 7 6.5 8C7.5 9 8.5 9.5 9 9C9.5 8.5 10.5 9 10.5 9L12.5 10C14 11 12 13.5 12 13.5C10 15.5 2 8 2 2.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            (602) 694-2905
+          </a>
+          <a href="#schedule" class="btn btn-primary">Claim My Free Local Presence Audit <span class="arrow">→</span></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       HERO
+       ══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <span class="pill-label">For Arizona Solo &amp; Small Law Firms</span>
+      </div>
+      <h1>
+        Showing Up on Google Maps<br/>
+        Gets You <span class="accent">Seen.</span><br/>
+        Your Reviews Get You Hired.
+      </h1>
+      <p class="hero-sub">
+        LocalAlly™ is Law Marketing Ally's done-for-you Local SEO and Reputation Management program — built to put your Arizona law firm in front of clients who are actively searching right now.
+      </p>
+      <div class="hero-ctas">
+        <a href="#schedule" class="btn btn-primary-lg">Claim My Free Local Presence Audit <span class="arrow">→</span></a>
+      </div>
+      <p class="hero-guarantee">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 6H15L11 9.5L12.5 15L8 12L3.5 15L5 9.5L1 6H6L8 1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        No commitment required &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; 100% focused on your results
+      </p>
+
+      <!-- Trust bar -->
+      <div class="trust-bar">
+        <div class="trust-item">
+          <div class="trust-item-icon">⚖️</div>
+          <div class="trust-item-text">
+            <strong>Law Firms Only</strong>
+            <span>Not a generalist agency</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">📍</div>
+          <div class="trust-item-text">
+            <strong>Arizona Market Expertise</strong>
+            <span>We know your local competitive landscape</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">🏆</div>
+          <div class="trust-item-text">
+            <strong>15+ Years Experience</strong>
+            <span>Legal marketing, not guesswork</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">🔒</div>
+          <div class="trust-item-text">
+            <strong>No Long-Term Contracts</strong>
+            <span>We earn your business every month</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROBLEM — Pain agitation
+       ══════════════════════════════════════ -->
+  <section class="problem-section">
+    <div class="container">
+      <div class="problem-header">
+        <span class="pill-label">The Real Problem</span>
+        <h2>Two Things Are Quietly Costing You Clients Right Now:<br/><span class="accent">Your Google Maps Visibility</span> and Your Online Reputation.</h2>
+        <p>It's rarely one thing. For most Arizona attorneys, local visibility and online reputation are both quietly working against them. Here's what we see most often.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-card-icon">📍</div>
+          <h3>You're Not Appearing in the Local 3-Pack</h3>
+          <p>Over 75% of people searching for a local attorney click one of the top three Google Maps results. If you're not there, you're functionally invisible — no matter how good your website is.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">⭐</div>
+          <h3>Too Few Reviews — or the Wrong Ones</h3>
+          <p>Prospective clients treat your review count and rating as a proxy for trustworthiness. Fewer than 10 reviews, or an average below 4.5, and qualified clients are choosing your competitor before you ever speak.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">🧩</div>
+          <h3>Your Google Business Profile Is Incomplete</h3>
+          <p>An unoptimized GBP profile is a ranking liability. Missing practice area categories, inconsistent hours, no posts, and incorrect attributes all suppress your visibility in local search.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">🗺️</div>
+          <h3>You Don't Know Where You're Invisible</h3>
+          <p>Your Google Maps ranking isn't a single number — it changes block by block across your city. A firm can rank #1 near their office and not appear at all five miles away. Most attorneys have no idea how their visibility breaks down across Phoenix, Scottsdale, or wherever they practice.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card-icon">🤖</div>
+          <h3>AI Is Changing Who Gets Recommended</h3>
+          <p>Over 60% of searches now end without a single click — Google's AI answers the question directly on the results page. The firms it recommends aren't chosen randomly. They're the ones Google already recognizes as trusted, verified, and authoritative in their local market. Without that foundation, your firm may not be in the conversation at all.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card-icon">⏱️</div>
+          <h3>You Don't Have Time to Fix It</h3>
+          <p>Local SEO and reputation management require consistent, ongoing effort. Between client work, court dates, and running your practice, this falls through the cracks — and your ranking reflects it.</p>
+        </div>
+      </div>
+      <div class="problem-cta">
+        <a href="#schedule" class="btn btn-primary">See How LocalAlly™ Fixes This <span class="arrow">→</span></a>
+        <p>Takes 30 minutes. We'll show you exactly where your firm stands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       HEAT MAP PROOF SECTION
+       ══════════════════════════════════════ -->
+  <section class="heatmap-section">
+    <div class="container">
+      <div class="heatmap-inner">
+        <div class="heatmap-content">
+          <span class="pill-label">Your Free Local Presence Audit Includes This</span>
+          <h2>See Exactly Where Your Firm<br/><span class="accent">Ranks Across Your City.</span></h2>
+          <p>
+            Most attorneys assume their Google Maps ranking is one number. It's not. Your position changes neighborhood by neighborhood — and the only way to know where you're winning and where you're invisible is to see it visually.
+          </p>
+          <p>
+            Using professional GBP heat map technology, we pull a real-time ranking grid for your firm across your entire market before your audit call. You'll see a color-coded map of every area in your city — green where you're in the top 3, yellow where you're slipping, red where you're not showing up at all.
+          </p>
+          <p>
+            This isn't a sales presentation. It's your actual data and the framework for your local strategy. And it's yours to keep — completely free.
+          </p>
+          <a href="#schedule" class="btn btn-primary" style="margin-top: 8px;">Claim My Free Local Presence Audit <span class="arrow">→</span></a>
+        </div>
+        <div class="heatmap-visual-wrap">
+          <div class="heatmap-label-bar">
+            <span class="pill-label" style="font-size:10px;">Sample GBP Heat Map — Phoenix Metro, AZ</span>
+          </div>
+          <div class="heatmap-card" style="padding: 0; overflow: hidden; background: transparent; border: none;">
+            <img src="heatmap-az-cropped.png" alt="GBP Heat Map showing local search rankings across the Phoenix metro area including Mesa, Gilbert, and Chandler" style="width:100%; display:block; border-radius: var(--radius-card);" />
+          </div>
+          <div class="heatmap-cta-note">
+            Your firm's actual heat map will be ready before your audit call.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SOLUTION INTRO
+       ══════════════════════════════════════ -->
+  <section class="solution-section">
+    <div class="container text-center">
+      <span class="pill-label">The Solution</span>
+      <h2>Introducing <span class="accent">LocalAlly™</span></h2>
+      <p>
+        You've seen what's working against you. LocalAlly™ is built to fix all of it — a done-for-you Local SEO and Reputation Management system built exclusively for solo and small law firms in Arizona. Not a generic package. A focused system that handles the two most direct levers for whether clients find and choose your firm.
+      </p>
+      <p>
+        We handle the execution. You handle the cases.
+      </p>
+      <div class="solution-divider"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SERVICES — Benefits-first pillars
+       ══════════════════════════════════════ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="services-header">
+        <span class="pill-label">What's Included</span>
+        <h2>Two Pillars. <span class="accent">One Clear Outcome.</span></h2>
+        <p>LocalAlly™ targets the two most direct levers for winning more local clients.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-badge">Pillar 1</div>
+          <h3>Local SEO &amp; Google Business Profile Optimization</h3>
+          <p>Your Google Business Profile is the single most valuable piece of digital real estate your firm owns. We manage and optimize it like the client-generating asset it is.</p>
+          <div class="service-outcome">
+            <strong>Outcome:</strong> Your firm appears consistently in the Google Maps 3-Pack when clients in your area search for an attorney in your practice area.
+          </div>
+          <ul class="service-list">
+            <li>Full Google Business Profile audit and optimization</li>
+            <li>Practice area and keyword strategy specific to your Arizona market</li>
+            <li>Local citation building and NAP consistency across legal directories</li>
+            <li>Monthly GBP posts to sustain map pack ranking signals</li>
+            <li>Competitor gap analysis — know exactly who you're up against</li>
+            <li>GBP heat map ranking reports showing your visibility across every neighborhood in your market</li>
+            <li>Ongoing rank monitoring with branded monthly reporting</li>
+            <li>Local landing page content creation — geo-targeted, entity-optimized pages that strengthen your firm's footprint in Google and AI search results</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-badge">Pillar 2</div>
+          <h3>Reputation Management &amp; Review Generation</h3>
+          <p>Reviews don't happen on their own. We implement a proven, concierge-driven approach — including personal outreach calls made on your behalf — to acquire 5-star reviews and protect the reputation you've spent years earning.</p>
+          <div class="service-outcome">
+            <strong>Outcome:</strong> A growing volume of verified reviews that build trust, improve your local ranking, and convert searchers into consultations.
+          </div>
+          <ul class="service-list">
+            <li>Review generation system integrated into your client intake flow</li>
+            <li>Automated review request sequences for Google, Avvo, and more</li>
+            <li>Professionally crafted response templates for positive reviews</li>
+            <li>Strategic guidance for handling negative reviews appropriately</li>
+            <li>Reputation monitoring across key legal and review platforms</li>
+            <li>Monthly reputation report — always know where you stand</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="services-cta">
+        <a href="#how" class="btn btn-primary">See How It Works <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONCIERGE DIFFERENTIATOR
+       ══════════════════════════════════════ -->
+  <section class="concierge-section">
+    <div class="container">
+      <div class="concierge-inner">
+        <div class="concierge-content">
+          <span class="pill-label">The LocalAlly™ Difference</span>
+          <h2>We Don't Just Send Emails.<br/><span class="accent">We Make the Calls.</span></h2>
+          <p>
+            Most review generation programs rely entirely on automated emails and text messages that clients ignore. LocalAlly™ goes further — because generating reviews for a law firm sometimes requires a human touch.
+          </p>
+          <p>
+            As part of our concierge approach, we personally reach out on your firm's behalf — making direct calls when appropriate — to help your satisfied clients complete a review. We remove the friction, navigate the process with them, and get it done.
+          </p>
+          <div class="concierge-callout">
+            <p><strong>This is not something marketing software does.</strong> It's the kind of hands-on effort that separates a true ally from a vendor — and it's why LocalAlly™ clients build review profiles that automated services simply can't replicate.</p>
+          </div>
+          <a href="#schedule" class="btn btn-primary">Claim My Free Local Presence Audit <span class="arrow">→</span></a>
+        </div>
+        <div class="concierge-steps">
+          <div class="concierge-step">
+            <div class="concierge-step-num">1</div>
+            <div class="concierge-step-text">
+              <h4>We Identify the Right Clients</h4>
+              <p>Working with your intake data, we flag recently closed, satisfied clients who are natural candidates for a review request — prioritizing those most likely to respond positively.</p>
+            </div>
+          </div>
+          <div class="concierge-step">
+            <div class="concierge-step-num">2</div>
+            <div class="concierge-step-text">
+              <h4>We Reach Out on Your Behalf</h4>
+              <p>Beyond automated messages, we personally follow up with calls when needed — introducing ourselves as your marketing partner and guiding clients through leaving a review. No friction, no confusion.</p>
+            </div>
+          </div>
+          <div class="concierge-step">
+            <div class="concierge-step-num">3</div>
+            <div class="concierge-step-text">
+              <h4>We Handle Every Detail</h4>
+              <p>From helping clients navigate Google's review interface to ensuring reviews post correctly and are responded to professionally — we manage the entire process from start to finish.</p>
+            </div>
+          </div>
+          <div class="concierge-step">
+            <div class="concierge-step-num">4</div>
+            <div class="concierge-step-text">
+              <h4>You See the Results Monthly</h4>
+              <p>Your monthly LocalAlly™ report shows exactly how many reviews were generated, your updated rating, and the trend line — so you always know what your concierge work is producing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       HOW IT WORKS — Reduce friction
+       ══════════════════════════════════════ -->
+  <section class="how-section" id="how">
+    <div class="container">
+      <div class="how-header">
+        <span class="pill-label">Getting Started</span>
+        <h2>Three Steps. <span class="accent">Zero Complexity.</span></h2>
+        <p>From your first call to your first results, here's exactly what to expect.</p>
+      </div>
+      <div class="steps-wrapper">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Free Local Presence Audit</h3>
+          <p>Before we even speak, we pull a live GBP heat map of your firm and audit your online reputation. On the call, you'll see exactly where you rank across your city and hear an honest assessment of what your reviews are saying to prospective clients. Then we talk strategy.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Full Audit &amp; Custom Strategy</h3>
+          <p>We audit everything that affects your local visibility. Starting with your Google Business Profile, website local pages, citation landscape, existing reviews, and competitor positions. From there, we build your custom action plan. No guesswork. No generic templates.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Ongoing Execution &amp; Results</h3>
+          <p>We implement, manage, and optimize every month on your behalf and include making personal outreach calls to help your clients leave reviews. You receive clear monthly reports tracking your map pack rankings, review growth, and visibility. You always know what's working.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIDEO SECTION — Meet Roger
+       ══════════════════════════════════════ -->
+  <section class="video-section">
+    <div class="container">
+      <div class="video-section-inner">
+
+        <!-- Copy Column -->
+        <div class="video-section-copy">
+          <span class="pill-label">Hear It From Roger</span>
+          <h2>Before You Schedule, <span class="accent">Watch This First.</span></h2>
+          <p>In this short video, I walk you through exactly what LocalAlly™ does, how the free local presence audit works, and what you can expect when we connect.</p>
+          <p>No sales pitch. No pressure. Just a straight-talk breakdown of what's likely hurting your local visibility and reputation right now — and what it takes to fix it.</p>
+          <p>If it resonates, the next step is easy. If it doesn't, you'll still know more about your Google presence than you did five minutes ago.</p>
+          <div class="video-byline">
+            <div class="video-byline-avatar"><img src="Roger.png" alt="Roger Leathers, Founder of Law Marketing Ally — Arizona Legal Marketing Specialist" /></div>
+            <div class="video-byline-info">
+              <div class="name">Roger Leathers</div>
+              <div class="title">Founder, Law Marketing Ally · 15 Years in Legal Marketing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Placeholder Column -->
+        <!-- PLACEHOLDER: Replace the div below with your actual video embed (YouTube, Vimeo, Wistia, etc.) -->
+        <div class="video-placeholder-wrap" title="Video coming soon — embed your video here">
+          <div class="video-play-btn">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="10,7 23,14 10,21" fill="#fff"/>
+            </svg>
+          </div>
+          <span class="video-placeholder-label">Your video goes here</span>
+          <span class="video-duration">~3:00</span>
+        </div>
+        <!-- END PLACEHOLDER -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       AUTHORITY
+       ══════════════════════════════════════ -->
+  <section class="authority-section">
+    <div class="container">
+      <div class="authority-inner">
+        <div class="authority-content">
+          <span class="pill-label">Why Law Marketing Ally</span>
+          <h2>Built on <span class="accent">15 Years</span> of Legal Marketing. On Your Side of the Table.</h2>
+          <p>Law Marketing Ally isn't a general agency that takes law firms as clients. We work exclusively with attorneys. That means we understand the competitive dynamics of Arizona legal markets, and the specific decision patterns of legal consumers searching locally.</p>
+          <p>As an independent advisor, our only agenda is your results. We tell you what actually moves the needle for a firm your size in your market.</p>
+          <div class="ai-callout">
+            <p><strong>Built for What's Coming:</strong> As AI-generated answers increasingly replace traditional search results, the firms that get recommended will be those Google already trusts. It's more important than ever to be verified, consistent, and backed by strong reviews and local entity signals. That's not a future problem. It's happening now. And it's exactly what LocalAlly™ is designed to build.</p>
+          </div>
+          <a href="#schedule" class="btn btn-primary" style="margin-top: 24px;">Claim My Free Local Presence Audit <span class="arrow">→</span></a>
+        </div>
+        <div class="authority-stats">
+          <div class="stat-card">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Years of legal marketing experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Exclusive focus on law firms</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">60–90</div>
+            <div class="stat-label">Days to first measurable ranking movement</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">AZ</div>
+            <div class="stat-label">Deep expertise in Arizona legal markets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FAQ — Objection handling
+       ══════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-header">
+        <span class="pill-label">Common Questions</span>
+        <h2>Everything You Want to Know<br/>Before You Commit to Anything</h2>
+        <p>No pressure, no jargon — just straight answers.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What exactly happens on the free local presence audit?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Before the call, we do two things: run a detailed review of your GBP with a heat map of your firm across your market along with a comprehensive audit of your online reputation. On the call, we walk through both together and look at where you rank neighborhood by neighborhood, and what your reviews are saying to prospective clients. You'll leave with a complete picture of your local presence and a clear plan — with no obligation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How long does it take to start seeing results in Google Maps?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Most clients begin to see measurable movement in local rankings within 60–90 days. Local SEO is not instant because Google needs time to recognize, verify, and reward the local signals we build. That said, many clients see early wins sooner, particularly when there are clear gaps in GBP completeness or citation consistency that we can address quickly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>I already have a website. Do I still need LocalAlly™?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, because your website and your Google Maps presence are separate ranking systems. Many law firms with excellent websites rank poorly in the local map pack because their Google Business Profile, citation landscape, and online reputation are neglected. A thin review profile or unaddressed negative reviews can cost you clicks even when you do rank. But it goes further than that: your local visibility and reputation don't just support your website. They amplify it. Strong GBP signals, consistent citations, and a healthy review profile are increasingly what AI-powered search engines use to validate your authority and surface your firm in AI-generated answers. LocalAlly™ works alongside your existing website, not instead of it — strengthening the local and reputation signals that your entire online marketing strategy depends on.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Are there long-term contracts? What's the commitment?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>No long-term contracts. Local SEO and reputation management are ongoing programs, and we recommend a minimum of 3–6 months to see meaningful results. But we don't lock you in. We earn your business month to month. If you're not satisfied with what we're doing, you can end the engagement. We believe our strong results are the reason you stay — not a contract.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>My current agency says they already handle local SEO. Isn't that covered?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>It's one of the most common things we hear from law firms — and it's worth taking a closer look. Most law firms are already paying for local SEO as part of a broader marketing service, but what they're actually receiving is a generic, largely automated service that checks the box without moving the needle. Basic directory listings, a claimed Google Business Profile, maybe some keyword-optimized content — and then it runs on autopilot. In today's Arizona legal market, that's not enough. Legal search is competitive, hyper-local, and increasingly driven by AI-powered results that reward firms with real local authority — not outdated practices. What actually moves the needle is a unique strategy built around competitive analysis and a local entity approach: understanding how your firm is being read and validated by Google and AI search across your specific market, practice area, and geography. That means active GBP management, citation integrity, a structured review program, and local content signals working together as a system. The free local presence audit will show you exactly what's in place and what isn't. Most attorneys are surprised by what they find.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How much time will this require from me?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Very little. After onboarding (which typically requires a 45-minute call), LocalAlly™ is a done-for-you program. You'll receive a monthly report and a brief check-in to review results. We're not here to create more work for you — we're here to handle this so you can focus on practicing law.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="faq-cta">
+        <a href="#schedule" class="btn btn-primary">Still Have Questions? Let's Talk <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FINAL CTA — Close with urgency
+       ══════════════════════════════════════ -->
+  <section class="cta-section" id="schedule">
+    <div class="container">
+      <span class="pill-label">Free Local Presence Audit</span>
+      <h2>See Where You Stand.<br/><span class="accent">Then Decide.</span></h2>
+      <p>
+        Before your 30-minute audit call, we pull your GBP data via heat map and audit your reputation — with no cost, no obligation. You'll see your full local presence: where you rank, what your reviews say, and what strategy we'd take to dominate your market.
+      </p>
+      <div class="cta-risk-reversal" style="margin-bottom: 32px;">
+        <div class="cta-risk-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L10 6H14.5L11 9L12.5 14L8 11.5L3.5 14L5 9L1.5 6H6L8 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          No commitment required
+        </div>
+        <div class="cta-risk-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L10 6H14.5L11 9L12.5 14L8 11.5L3.5 14L5 9L1.5 6H6L8 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          No long-term contracts
+        </div>
+        <div class="cta-risk-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L10 6H14.5L11 9L12.5 14L8 11.5L3.5 14L5 9L1.5 6H6L8 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          30-minute call, honest answers
+        </div>
+      </div>
+
+      <!-- Calendly inline widget -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/roger-lawmarketingally/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0f1825&text_color=e0e0e0&primary_color=e88b1f" style="min-width:320px; height:700px; border-radius:18px; overflow:hidden;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- End Calendly inline widget -->
+
+      <div class="urgency-note" style="margin-top: 32px;">
+        <strong>Note:</strong> We limit LocalAlly™ enrollment by market area to avoid conflicts between competing firms. If you're in Phoenix, Scottsdale, Tempe, or Tucson — availability is limited.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER — Minimal, no leaking links
+       ══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <svg width="130" height="66" viewBox="0 0 280 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2" x1="0.3" y1="0" x2="0.7" y2="1">
+                <stop offset="0%" stop-color="#f0a030"/>
+                <stop offset="60%" stop-color="#e88b1f"/>
+                <stop offset="100%" stop-color="#d47518"/>
+              </linearGradient>
+            </defs>
+            <polygon points="140,4 80,80 140,80" fill="url(#g2)"/>
+            <polygon points="140,28 190,80 140,80" fill="#1b2a4a"/>
+            <path d="M92,68 C120,55 165,58 195,62" stroke="#e88b1f" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <text x="52" y="106" fill="white" font-family="Georgia,serif" font-size="20" font-weight="700" letter-spacing="3">LAW</text>
+            <text x="112" y="106" fill="#e88b1f" font-family="Georgia,serif" font-size="20" font-weight="700" letter-spacing="2">MARKETING</text>
+            <line x1="52" y1="112" x2="230" y2="112" stroke="#e88b1f" stroke-width="0.8" opacity="0.6"/>
+            <text x="114" y="130" fill="white" font-family="Georgia,serif" font-size="18" font-weight="700" letter-spacing="5">ALLY</text>
+            <line x1="52" y1="136" x2="230" y2="136" stroke="#e88b1f" stroke-width="0.8" opacity="0.6"/>
+          </svg>
+          <p>Serving Law Firms Nationally</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <a href="tel:6026942905">(602) 694-2905</a>
+          <a href="mailto:roger@lawmarketingally.com">roger@lawmarketingally.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Law Marketing Ally. All rights reserved.</p>
+        <p>LocalAlly™ is a service of Law Marketing Ally.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════
+       STICKY MOBILE CTA BAR
+       ══════════════════════════════════════ -->
+  <div class="mobile-cta-bar">
+    <a href="#schedule" class="btn btn-primary">Claim My Free Local Presence Audit →</a>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       FAQ ACCORDION JS
+       ══════════════════════════════════════ -->
+  <script>
+    /* ── FAQ Accordion ── */
+    function toggleFAQ(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    /* ── Heat Map Grid Generator ── */
+    (function buildHeatMap() {
+      const grid = document.getElementById('heatmapGrid');
+      if (!grid) return;
+
+      // Realistic ranking pattern: better near center, worse at edges
+      // 7x7 grid = 49 dots
+      const pattern = [
+        20, 18, 15, 12, 14, 17, 20,
+        16, 11,  8,  5,  7, 10, 15,
+        13,  7,  3,  1,  2,  6, 12,
+        14,  6,  2,  1,  3,  8, 13,
+        15,  9,  4,  2,  4,  9, 16,
+        17, 12,  8,  6,  8, 13, 18,
+        20, 17, 14, 12, 15, 18, 20
+      ];
+
+      function rankColor(r) {
+        if (r <= 3)  return { bg: '#22c55e', text: '#052e16' };
+        if (r <= 7)  return { bg: '#84cc16', text: '#1a2e05' };
+        if (r <= 13) return { bg: '#eab308', text: '#1c1300' };
+        return       { bg: '#ef4444', text: '#1c0000' };
+      }
+
+      pattern.forEach((rank, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'hm-dot';
+        const { bg, text } = rankColor(rank);
+        dot.style.background = bg;
+        dot.style.color = text;
+        dot.style.animationDelay = (i * 18) + 'ms';
+        dot.textContent = rank <= 20 ? rank : '20+';
+        dot.title = 'Rank #' + rank + ' at this location';
+        grid.appendChild(dot);
+      });
+    })();
+  </script>
+
+</body>
+</html>

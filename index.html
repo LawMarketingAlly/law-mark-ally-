@@ -99,6 +99,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .hero-sub{font-size:clamp(16px,1.4vw,20px);color:var(--text-muted);max-width:540px;line-height:1.55}
 .hero-sub strong{color:#fff;font-weight:600}
 .hero-img{position:relative;width:100%;max-width:828px;margin-top:16px}
+.hero-img svg{width:100%;display:block}.hero-svg-tall{display:none!important}
+@media(min-width:641px){.hero-img{margin-bottom:96px}}
+@media(max-width:640px){.hero-svg-wide{display:none!important}.hero-svg-tall{display:block!important;max-width:420px;margin:0 auto}.hero-img{margin-bottom:72px}}
 .hero-img-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(232,139,31,.12),transparent 70%);pointer-events:none}
 .hero-fade{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent,var(--bg-dark));z-index:3;pointer-events:none}
 
@@ -423,111 +426,95 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     </a>
     <div class="hero-img fade4">
       <div class="hero-img-glow"></div>
-      <svg viewBox="0 0 828 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+      <svg class="hero-svg-wide" viewBox="0 0 828 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heroImgTitle heroImgDesc">
+        <title id="heroImgTitle">Where clients find attorneys now</title>
+        <desc id="heroImgDesc">Three channels: organic search, the local map pack, and AI answers, brought together in one independent view of your firm and your agency.</desc>
         <defs>
-          <linearGradient id="mg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a101c" stop-opacity="0"/><stop offset="100%" stop-color="#030305" stop-opacity="1"/></linearGradient>
-          <radialGradient id="glow1" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.12"/><stop offset="100%" stop-color="#e88b1f" stop-opacity="0"/></radialGradient>
-          <linearGradient id="barG" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.9"/><stop offset="100%" stop-color="#f0a840" stop-opacity="0.6"/></linearGradient>
-          <linearGradient id="barN" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#1b2a4a" stop-opacity="0.8"/><stop offset="100%" stop-color="#2a3d66" stop-opacity="0.5"/></linearGradient>
-          <linearGradient id="lineG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.3"/><stop offset="100%" stop-color="#e88b1f" stop-opacity="0.9"/></linearGradient>
-          <filter id="glowF"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <radialGradient id="hGlow" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.10"/><stop offset="100%" stop-color="#e88b1f" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a101c" stop-opacity="0"/><stop offset="100%" stop-color="#030305" stop-opacity="1"/></linearGradient>
+          <linearGradient id="hTile" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#111d32"/><stop offset="100%" stop-color="#0c1322"/></linearGradient>
+          <filter id="hGlowF"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         </defs>
 
         <!-- Background -->
         <rect width="828" height="420" fill="#080e1a" rx="20"/>
-        <rect width="828" height="420" fill="url(#glow1)"/>
+        <rect width="828" height="420" fill="url(#hGlow)"/>
         <rect x="1" y="1" width="826" height="418" rx="19" fill="none" stroke="rgba(232,139,31,0.12)" stroke-width="1"/>
 
-        <!-- Dashboard panel -->
-        <rect x="40" y="30" width="748" height="360" rx="14" fill="#0c1322" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <!-- Heading -->
+        <text x="414" y="58" fill="rgba(255,255,255,0.45)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle">WHERE CLIENTS FIND ATTORNEYS NOW</text>
+        <line x1="384" y1="74" x2="444" y2="74" stroke="#e88b1f" stroke-width="2" stroke-linecap="round"/>
 
-        <!-- Top bar -->
-        <rect x="40" y="30" width="748" height="44" rx="14" fill="#0f1829"/>
-        <rect x="40" y="60" width="748" height="14" fill="#0f1829"/>
-        <circle cx="68" cy="52" r="6" fill="#e88b1f" opacity="0.8"/>
-        <circle cx="88" cy="52" r="6" fill="#1b2a4a" opacity="0.6"/>
-        <circle cx="108" cy="52" r="6" fill="#1b2a4a" opacity="0.4"/>
-        <text x="400" y="56" fill="rgba(255,255,255,0.4)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="600" text-anchor="middle">Law Marketing Ally — Performance Dashboard</text>
+        <!-- Tile 1: Organic search -->
+        <rect x="56" y="100" width="220" height="176" rx="14" fill="url(#hTile)" stroke="rgba(232,139,31,0.18)" stroke-width="1"/>
+        <circle cx="166" cy="150" r="28" fill="rgba(232,139,31,0.10)"/>
+        <g stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" fill="none"><circle cx="162" cy="146" r="11"/><line x1="170" y1="154" x2="180" y2="164"/></g>
+        <text x="166" y="210" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="17" font-weight="700" text-anchor="middle">Organic Search</text>
+        <text x="166" y="236" fill="rgba(255,255,255,0.55)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="500" text-anchor="middle">The Google results</text>
+        <text x="166" y="254" fill="rgba(255,255,255,0.55)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="500" text-anchor="middle">clients actually click</text>
 
-        <!-- KPI Cards -->
-        <rect x="60" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
-        <text x="76" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">NEW LEADS</text>
-        <text x="76" y="140" fill="#e88b1f" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">247</text>
-        <text x="140" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">+32%</text>
+        <!-- Tile 2: Local map pack -->
+        <rect x="304" y="100" width="220" height="176" rx="14" fill="url(#hTile)" stroke="rgba(232,139,31,0.18)" stroke-width="1"/>
+        <circle cx="414" cy="150" r="28" fill="rgba(232,139,31,0.10)"/>
+        <g stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M414 133a12 12 0 0 1 12 12c0 10-12 22-12 22s-12-12-12-22a12 12 0 0 1 12-12z"/><circle cx="414" cy="145" r="4"/></g>
+        <text x="414" y="210" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="17" font-weight="700" text-anchor="middle">Local Map Pack</text>
+        <text x="414" y="236" fill="rgba(255,255,255,0.55)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="500" text-anchor="middle">The top spots on Google Maps</text>
+        <text x="414" y="254" fill="rgba(255,255,255,0.55)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="500" text-anchor="middle">in your service area</text>
 
-        <rect x="240" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
-        <text x="256" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">SIGNED CLIENTS</text>
-        <text x="256" y="140" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">89</text>
-        <text x="300" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">+18%</text>
+        <!-- Tile 3: AI answers -->
+        <rect x="552" y="100" width="220" height="176" rx="14" fill="url(#hTile)" stroke="rgba(232,139,31,0.18)" stroke-width="1"/>
+        <circle cx="662" cy="150" r="28" fill="rgba(232,139,31,0.10)"/>
+        <g stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M662 134l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z"/><path d="M677 132l1.5 3.5 3.5 1.5-3.5 1.5-1.5 3.5-1.5-3.5-3.5-1.5 3.5-1.5z"/></g>
+        <text x="662" y="210" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="17" font-weight="700" text-anchor="middle">AI Answers</text>
+        <text x="662" y="236" fill="rgba(255,255,255,0.55)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="500" text-anchor="middle">Who AI assistants recommend</text>
+        <text x="662" y="254" fill="rgba(255,255,255,0.55)" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="500" text-anchor="middle">when clients ask</text>
 
-        <rect x="420" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
-        <text x="436" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">COST PER CASE</text>
-        <text x="436" y="140" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">$412</text>
-        <text x="505" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">-24%</text>
+        <!-- Connectors into one view -->
+        <g stroke="#e88b1f" stroke-opacity="0.45" stroke-width="1.5" fill="none" stroke-linecap="round">
+          <path d="M166 276 V300 Q166 314 180 314 H340"/>
+          <path d="M414 276 V318"/>
+          <path d="M662 276 V300 Q662 314 648 314 H488"/>
+        </g>
 
-        <rect x="600" y="90" width="165" height="72" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
-        <text x="616" y="112" fill="rgba(255,255,255,0.35)" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" letter-spacing="1">ROI</text>
-        <text x="616" y="140" fill="#e88b1f" font-family="'Plus Jakarta Sans',sans-serif" font-size="26" font-weight="800">5.2x</text>
-        <text x="682" y="140" fill="#4ade80" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="600">+41%</text>
-
-        <!-- Bar chart area -->
-        <text x="76" y="196" fill="rgba(255,255,255,0.3)" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="600" letter-spacing="1">MONTHLY CASE VOLUME</text>
-
-        <!-- Grid lines -->
-        <line x1="60" y1="215" x2="500" y2="215" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="60" y1="245" x2="500" y2="245" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="60" y1="275" x2="500" y2="275" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="60" y1="305" x2="500" y2="305" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="60" y1="335" x2="500" y2="335" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="60" y1="365" x2="500" y2="365" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-
-        <!-- Bars -->
-        <rect x="80" y="325" width="24" height="40" rx="4" fill="url(#barN)"/>
-        <rect x="115" y="305" width="24" height="60" rx="4" fill="url(#barG)"/>
-        <rect x="155" y="315" width="24" height="50" rx="4" fill="url(#barN)"/>
-        <rect x="190" y="290" width="24" height="75" rx="4" fill="url(#barG)"/>
-        <rect x="230" y="300" width="24" height="65" rx="4" fill="url(#barN)"/>
-        <rect x="265" y="270" width="24" height="95" rx="4" fill="url(#barG)"/>
-        <rect x="305" y="280" width="24" height="85" rx="4" fill="url(#barN)"/>
-        <rect x="340" y="255" width="24" height="110" rx="4" fill="url(#barG)"/>
-        <rect x="380" y="265" width="24" height="100" rx="4" fill="url(#barN)"/>
-        <rect x="415" y="235" width="24" height="130" rx="4" fill="url(#barG)"/>
-        <rect x="455" y="245" width="24" height="120" rx="4" fill="url(#barN)"/>
-        <rect x="490" y="215" width="24" height="150" rx="4" fill="url(#barG)"/>
-
-        <!-- Month labels -->
-        <text x="92" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Jan</text>
-        <text x="127" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Feb</text>
-        <text x="167" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Mar</text>
-        <text x="202" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Apr</text>
-        <text x="242" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">May</text>
-        <text x="277" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Jun</text>
-        <text x="317" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Jul</text>
-        <text x="352" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Aug</text>
-        <text x="392" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Sep</text>
-        <text x="427" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Oct</text>
-        <text x="467" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Nov</text>
-        <text x="502" y="378" fill="rgba(255,255,255,0.25)" font-family="'Plus Jakarta Sans',sans-serif" font-size="8" text-anchor="middle">Dec</text>
-
-        <!-- Right side - Trend line chart -->
-        <rect x="540" y="188" width="230" height="186" rx="10" fill="#111d32" stroke="rgba(232,139,31,0.1)" stroke-width="1"/>
-        <text x="556" y="210" fill="rgba(255,255,255,0.3)" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="600" letter-spacing="1">INTAKE CONVERSION</text>
-
-        <!-- Trend line -->
-        <polyline points="556,340 580,332 604,325 628,310 652,318 676,295 700,280 724,260 748,240" fill="none" stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowF)"/>
-
-        <!-- Area under line -->
-        <polygon points="556,340 580,332 604,325 628,310 652,318 676,295 700,280 724,260 748,240 748,360 556,360" fill="#e88b1f" opacity="0.06"/>
-
-        <!-- Data dots -->
-        <circle cx="556" cy="340" r="3" fill="#e88b1f"/>
-        <circle cx="628" cy="310" r="3" fill="#e88b1f"/>
-        <circle cx="700" cy="280" r="3" fill="#e88b1f"/>
-        <circle cx="748" cy="240" r="4" fill="#e88b1f" stroke="#0c1322" stroke-width="2"/>
-        <text x="748" y="233" fill="#e88b1f" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="700" text-anchor="middle">68%</text>
+        <!-- Unified view pill -->
+        <rect x="244" y="322" width="340" height="46" rx="23" fill="#e88b1f" filter="url(#hGlowF)"/>
+        <text x="414" y="351" fill="#080e1a" font-family="'Plus Jakarta Sans',sans-serif" font-size="15" font-weight="800" text-anchor="middle">One independent view of all three</text>
 
         <!-- Bottom fade -->
-        <rect width="828" height="420" fill="url(#mg1)" opacity="0.5"/>
+        <rect width="828" height="420" fill="url(#hFade)" opacity="0.25"/>
+      </svg>
+      <svg class="hero-svg-tall" viewBox="0 0 360 506" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where clients find attorneys now: organic search, the local map pack, and AI answers, brought together in one independent view.">
+        <defs>
+          <radialGradient id="hGlowT" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#e88b1f" stop-opacity="0.10"/><stop offset="100%" stop-color="#e88b1f" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hTileT" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#111d32"/><stop offset="100%" stop-color="#0c1322"/></linearGradient>
+        </defs>
+        <rect width="360" height="506" fill="#080e1a" rx="18"/>
+        <rect width="360" height="506" fill="url(#hGlowT)"/>
+        <rect x="1" y="1" width="358" height="504" rx="17" fill="none" stroke="rgba(232,139,31,0.12)" stroke-width="1"/>
+        <text x="180" y="44" fill="rgba(255,255,255,0.5)" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="700" letter-spacing="2.5" text-anchor="middle">WHERE CLIENTS FIND ATTORNEYS NOW</text>
+        <line x1="155" y1="58" x2="205" y2="58" stroke="#e88b1f" stroke-width="2" stroke-linecap="round"/>
+
+        <rect x="24" y="80" width="312" height="96" rx="14" fill="url(#hTileT)" stroke="rgba(232,139,31,0.18)"/>
+        <circle cx="72" cy="128" r="24" fill="rgba(232,139,31,0.10)"/>
+        <g stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" fill="none"><circle cx="69" cy="125" r="9"/><line x1="76" y1="132" x2="84" y2="140"/></g>
+        <text x="112" y="122" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="17" font-weight="700">Organic Search</text>
+        <text x="112" y="145" fill="rgba(255,255,255,0.6)" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="500">The Google results clients click</text>
+
+        <rect x="24" y="192" width="312" height="96" rx="14" fill="url(#hTileT)" stroke="rgba(232,139,31,0.18)"/>
+        <circle cx="72" cy="240" r="24" fill="rgba(232,139,31,0.10)"/>
+        <g stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M72 226a10 10 0 0 1 10 10c0 8-10 18-10 18s-10-10-10-18a10 10 0 0 1 10-10z"/><circle cx="72" cy="236" r="3.5"/></g>
+        <text x="112" y="234" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="17" font-weight="700">Local Map Pack</text>
+        <text x="112" y="257" fill="rgba(255,255,255,0.6)" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="500">The top spots on Google Maps</text>
+
+        <rect x="24" y="304" width="312" height="96" rx="14" fill="url(#hTileT)" stroke="rgba(232,139,31,0.18)"/>
+        <circle cx="72" cy="352" r="24" fill="rgba(232,139,31,0.10)"/>
+        <g stroke="#e88b1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M72 338l3 7.5 7.5 3-7.5 3-3 7.5-3-7.5-7.5-3 7.5-3z"/><path d="M85 336l1.3 3 3 1.3-3 1.3-1.3 3-1.3-3-3-1.3 3-1.3z"/></g>
+        <text x="112" y="346" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-size="17" font-weight="700">AI Answers</text>
+        <text x="112" y="369" fill="rgba(255,255,255,0.6)" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="500">Who AI assistants recommend</text>
+
+        <line x1="180" y1="400" x2="180" y2="428" stroke="#e88b1f" stroke-opacity="0.45" stroke-width="1.5"/>
+        <rect x="24" y="428" width="312" height="50" rx="25" fill="#e88b1f"/>
+        <text x="180" y="459" fill="#080e1a" font-family="'Plus Jakarta Sans',sans-serif" font-size="15" font-weight="800" text-anchor="middle">One independent view of all three</text>
       </svg>
     </div>
   </div>
@@ -742,14 +729,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         </svg>
         <p class="footer-tagline">Serving Law Firms Nationally</p>
         <div class="footer-socials">
-          <a href="#" class="social-btn" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/roger-leathers-3b388929/" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
         </div>
       </div>

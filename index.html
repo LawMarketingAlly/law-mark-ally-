@@ -151,6 +151,21 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .pa-item{flex-shrink:0;display:flex;align-items:center;font-size:clamp(15px,1.4vw,19px);font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.82);white-space:nowrap}
 .pa-item::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--green-accent);margin:0 clamp(22px,2.6vw,40px);flex-shrink:0}
 .pa-track:hover{animation-play-state:paused}
+/* ══ MEET ROGER ══ */
+.meet{background:var(--bg-black);padding:110px 0}
+.meet-grid{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:center;max-width:980px;margin:0 auto}
+.meet-photo{position:relative}
+.meet-photo img{width:100%;height:auto;display:block;border-radius:20px;border:1px solid rgba(232,139,31,.25)}
+.meet-photo::after{content:"";position:absolute;inset:-14px;border-radius:28px;background:radial-gradient(ellipse at center,rgba(232,139,31,.14),transparent 70%);z-index:-1}
+.meet-body{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.meet-body h2{font-size:clamp(30px,2.8vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.1}
+.meet-role{font-size:15px;font-weight:600;color:var(--green-accent);margin-top:-8px}
+.meet-body p.meet-text{font-size:17px;line-height:1.75;color:var(--text-body)}
+.meet-facts{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.meet-facts li{font-size:13px;font-weight:600;color:var(--text-white);background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;padding:7px 14px}
+.meet-link{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--text-white);border-bottom:1px solid rgba(232,139,31,.5);padding-bottom:2px;transition:color .2s}
+.meet-link:hover{color:var(--green-accent)}
+@media(max-width:799px){.meet{padding:72px 0}.meet-grid{grid-template-columns:1fr;gap:32px}.meet-photo{max-width:240px}}
 @media(prefers-reduced-motion:reduce){.track-l,.track-r{animation:none}.pa-wrap{-webkit-mask-image:none;mask-image:none}.pa-track{width:auto}.pa-list{flex-wrap:wrap;justify-content:center;row-gap:12px;padding:0 20px}.pa-list[aria-hidden]{display:none}}
 
 /* ══════════════════════════════════════════════════════
@@ -670,6 +685,31 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
           </div></div>
         </div>
 
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ MEET ROGER ════════ -->
+<section class="meet" id="meet-roger">
+  <div class="wrap">
+    <div class="meet-grid">
+      <div class="meet-photo">
+        <img src="roger-leathers.jpg" alt="Roger Leathers, founder of Law Marketing Ally" width="560" height="560" loading="lazy"/>
+      </div>
+      <div class="meet-body">
+        <div class="pill"><span class="dot"></span> Meet Your Ally</div>
+        <h2>Roger Leathers</h2>
+        <p class="meet-role">Founder, Law Marketing Ally</p>
+        <p class="meet-text">I started my career at <span class="green">FindLaw</span>, learning legal marketing from the ground up. Over 15 years in SEO, business development, and account management, I've seen this industry from every side of the table. Now I sit on <span class="green">yours</span>, giving law firms an honest, independent view of what their marketing is really producing.</p>
+        <ul class="meet-facts">
+          <li>15+ Years in Legal Marketing</li>
+          <li>Started at FindLaw</li>
+          <li>Based in Arizona</li>
+        </ul>
+        <a class="meet-link" href="https://www.linkedin.com/in/roger-leathers-3b388929/" target="_blank" rel="noopener">Connect on LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>

@@ -273,6 +273,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .footer-cta-row{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:52px 0 36px;flex-wrap:wrap}
 .footer-cta-hl{font-size:clamp(38px,5vw,76px);font-weight:800;letter-spacing:-.03em;line-height:1}
 .footer-cta-btn{flex-shrink:0;font-size:15px;padding:15px 32px}
+.footer-cta-text{display:flex;flex-direction:column;gap:18px;max-width:980px}
+.footer-cta-sub{font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:var(--text-muted);max-width:640px}
 .footer-rule{height:1px;background:var(--border);margin-bottom:52px}
 
 .footer-cols{display:grid;grid-template-columns:auto 1fr auto auto;gap:56px;align-items:start;margin-bottom:52px}
@@ -701,12 +703,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         <div class="pill"><span class="dot"></span> Meet Your Ally</div>
         <h2>Roger Leathers</h2>
         <p class="meet-role">Founder, Law Marketing Ally</p>
-        <p class="meet-text">I started my career at <span class="green">FindLaw</span>, learning legal marketing from the ground up. Over 15 years in SEO, business development, and account management, I've seen this industry from every side of the table. Now I sit on <span class="green">yours</span>, giving law firms an honest, independent view of what their marketing is really producing.</p>
-        <ul class="meet-facts">
-          <li>15+ Years in Legal Marketing</li>
-          <li>Started at FindLaw</li>
-          <li>Based in Arizona</li>
-        </ul>
+        <p class="meet-text">I started my career at <span class="green">FindLaw</span>, learning legal marketing from the ground up. Over 15 years in SEO, business development, and account management, I've seen this industry from every side of the table. Now, from here in Arizona, I sit on <span class="green">yours</span>, giving law firms an honest, independent view of what their marketing is really producing.</p>
         <a class="meet-link" href="https://www.linkedin.com/in/roger-leathers-3b388929/" target="_blank" rel="noopener">Connect on LinkedIn
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -759,7 +756,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   <div class="footer-slant"></div>
   <div class="wrap footer-inner">
     <div class="footer-cta-row">
-      <p class="footer-cta-hl">Ready to See What Your Marketing Is <span class="green">Really Producing?</span></p>
+      <div class="footer-cta-text">
+        <p class="footer-cta-hl">Groundbreaking Market Data, <span class="green">Now on Your Side.</span></p>
+        <p class="footer-cta-sub">See how your firm and your agency stack up in major cities and across the state.</p>
+      </div>
       <a href="#schedule" class="btn footer-cta-btn">Request a Demo</a>
     </div>
     <div class="footer-rule"></div>

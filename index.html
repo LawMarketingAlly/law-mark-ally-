@@ -144,7 +144,13 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .logo-item{flex-shrink:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;transition:color .2s}
 .logo-item:hover{color:rgba(255,255,255,.65)}
 
-@media(prefers-reduced-motion:reduce){.track-l,.track-r{animation:none}}
+.pa-wrap{border-top:none;margin-top:22px;padding:14px 0}
+.pa-track{display:flex;width:max-content}
+.pa-list{display:flex;align-items:center;list-style:none;margin:0;padding:0}
+.pa-item{flex-shrink:0;display:flex;align-items:center;font-size:clamp(15px,1.4vw,19px);font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.82);white-space:nowrap}
+.pa-item::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--green-accent);margin:0 clamp(22px,2.6vw,40px);flex-shrink:0}
+.pa-track:hover{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.track-l,.track-r{animation:none}.pa-wrap{-webkit-mask-image:none;mask-image:none}.pa-track{width:auto}.pa-list{flex-wrap:wrap;justify-content:center;row-gap:12px;padding:0 20px}.pa-list[aria-hidden]{display:none}}
 
 /* ══════════════════════════════════════════════════════
    INTRO SECTION
@@ -524,11 +530,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 <!-- ════════════════════════════ CLIENT MARQUEE ════════ -->
 <section class="marquee-section" id="clients">
-  <p class="marquee-label">Tracking Client Trends Across Major Platforms</p>
+  <p class="marquee-label">Practice Areas We Help Grow</p>
 
-  <!-- Logo strip -->
-  <div class="logo-wrap" style="border-top:none;margin-top:0">
-    <div class="logo-track track-r" id="logoTrack"></div>
+  <!-- Practice area strip: two identical halves for a seamless loop -->
+  <div class="logo-wrap pa-wrap">
+    <div class="pa-track track-l">
+      <ul class="pa-list"><li class="pa-item">Family Law</li><li class="pa-item">Personal Injury</li><li class="pa-item">Estate Planning</li><li class="pa-item">Immigration</li><li class="pa-item">Employment Law</li><li class="pa-item">Truck Accidents</li><li class="pa-item">Medical Malpractice</li><li class="pa-item">Workers' Compensation</li><li class="pa-item">DUI</li><li class="pa-item">Bankruptcy</li></ul>
+      <ul class="pa-list" aria-hidden="true"><li class="pa-item">Family Law</li><li class="pa-item">Personal Injury</li><li class="pa-item">Estate Planning</li><li class="pa-item">Immigration</li><li class="pa-item">Employment Law</li><li class="pa-item">Truck Accidents</li><li class="pa-item">Medical Malpractice</li><li class="pa-item">Workers' Compensation</li><li class="pa-item">DUI</li><li class="pa-item">Bankruptcy</li></ul>
+    </div>
   </div>
 </section>
 
@@ -771,26 +780,6 @@ function togglePillar(card){
 }
 
 
-/* ── Build platform logo marquee ───────────────────── */
-const gaLogoSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="36" height="36"><path fill="#F9AB00" d="M469.3 209.2c-23.5 0-42.6 19.1-42.6 42.7v217.5c0 23.5 19.1 42.6 42.6 42.6s42.7-19.1 42.7-42.6V251.9c0-23.6-19.1-42.7-42.7-42.7z"/><path fill="#E37400" d="M256 299.4c-23.5 0-42.7 19.1-42.7 42.7v127.3c0 23.5 19.1 42.6 42.7 42.6s42.7-19.1 42.7-42.6V342.1c0-23.6-19.2-42.7-42.7-42.7z"/><path fill="#E37400" d="M42.7 384.3C19.1 384.3 0 403.4 0 427s19.1 42.7 42.7 42.7c23.5 0 42.7-19.1 42.7-42.7-.1-23.6-19.2-42.7-42.7-42.7z"/></svg>`;
-
-const crLogoIMG = `<img src="https://www.freelogovectors.net/wp-content/uploads/2021/09/callrail-logo-freelogovectors.net_.png" alt="CallRail Logo" height="36" style="height:36px;width:auto;filter:brightness(1.2)">`;
-
-const platformLogos = [
-  {name:'Google Analytics', icon: gaLogoSVG},
-  {name:'CallRail', icon: crLogoIMG},
-  {name:'Google Analytics', icon: gaLogoSVG},
-  {name:'CallRail', icon: crLogoIMG},
-  {name:'Google Analytics', icon: gaLogoSVG},
-  {name:'CallRail', icon: crLogoIMG},
-  {name:'Google Analytics', icon: gaLogoSVG},
-  {name:'CallRail', icon: crLogoIMG},
-  {name:'Google Analytics', icon: gaLogoSVG},
-  {name:'CallRail', icon: crLogoIMG},
-]
-
-const logoTrack = document.getElementById('logoTrack')
-logoTrack.innerHTML = platformLogos.map(p=>`<div class="logo-item" style="display:flex;align-items:center;gap:8px">${p.icon}<span>${p.name}</span></div>`).join('')
 </script>
 </body>
 </html>

@@ -101,8 +101,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .hero-sub strong{color:#fff;font-weight:600}
 .hero-img{position:relative;width:100%;max-width:828px;margin-top:16px}
 .hero-img svg{width:100%;display:block}.hero-svg-tall{display:none!important}
-@media(min-width:641px){.hero-img{margin-bottom:96px}}
-@media(max-width:640px){.hero-svg-wide{display:none!important}.hero-svg-tall{display:block!important;max-width:420px;margin:0 auto}.hero-img{margin-bottom:72px}}
+@media(min-width:800px){.hero-img{margin-bottom:72px}}
+@media(max-width:799px){.hero-svg-wide{display:none!important}.hero-svg-tall{display:block!important;max-width:420px;margin:0 auto}.hero-img{margin-bottom:72px}}
 .hero-img-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(232,139,31,.12),transparent 70%);pointer-events:none}
 .hero-fade{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent,var(--bg-dark));z-index:3;pointer-events:none}
 
@@ -324,6 +324,19 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .footer-cta-row{flex-direction:column;align-items:flex-start}
   .footer-cols{grid-template-columns:1fr;gap:36px}
   .p-list,.p-cta{margin-left:0}
+}
+/* ── Nov 2026 sizing pass ── */
+.pillars{padding:88px 0 100px}
+.meet{padding:96px 0}
+.pillars-header .pill,.meet-body .pill{align-self:flex-start}
+@media(max-width:1100px){.pillars-header{max-width:720px}}
+@media(max-width:799px){
+  .hero h1{font-size:clamp(36px,7.5vw,52px);line-height:1.08}
+  .pillars{padding:64px 0}
+  .pillars h2{font-size:clamp(32px,6vw,40px)}
+  .meet{padding:64px 0}
+  .p-toggle{width:40px;height:40px}
+  .footer-cta-hl{font-size:clamp(32px,7vw,44px);line-height:1.08}
 }
 </style>
 <script type="application/ld+json">

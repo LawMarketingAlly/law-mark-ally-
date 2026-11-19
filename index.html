@@ -9,12 +9,13 @@
 <meta property="og:title" content="Law Marketing Ally | Independent Law Firm Marketing Advisor"/>
 <meta property="og:description" content="15 years of legal marketing experience, now on your side of the table. Independent strategy, vendor oversight, and performance tracking for law firms ready to grow."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://lawmarketingally.com"/>
+<meta property="og:url" content="https://www.lawmarketingally.com/"/>
+<link rel="canonical" href="https://www.lawmarketingally.com/"/>
 <meta property="og:site_name" content="Law Marketing Ally"/>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 /* ── Variables ─────────────────────────────────────── */
 :root{
@@ -27,7 +28,7 @@
   --text-muted:rgba(255,255,255,.64);
   --text-body:rgba(224,224,224,.86);
   --border:rgba(255,255,255,.1);
-  --font:'Plus Jakarta Sans','Inter',sans-serif;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --mono:'Geist Mono','Courier New',monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -273,7 +274,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .footer-geo{font-size:13px;color:rgba(255,255,255,.38)}
 .footer-coords{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.05em}
 .footer-bottom{padding-top:22px;border-top:1px solid var(--border)}
-.footer-copy{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.3)}
+.footer-copy{font-family:var(--font);font-size:12px;color:rgba(255,255,255,.3)}
 .footer-copy a{color:rgba(255,255,255,.5);transition:color .2s}
 .footer-copy a:hover{color:var(--green-accent)}
 
@@ -313,11 +314,16 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Law Marketing Ally",
-  "url": "https://lawmarketingally.com",
+  "url": "https://www.lawmarketingally.com/",
   "description": "Independent law firm marketing advisor providing strategy, vendor oversight, intake optimization, and performance tracking for law firms.",
   "telephone": "+16026942905",
   "priceRange": "$$",
   "serviceType": "Law Firm Marketing Consulting",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "AZ",
+    "addressCountry": "US"
+  },
   "areaServed": {
     "@type": "Country",
     "name": "United States"
@@ -395,7 +401,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.68 19.79 19.79 0 01.82 2a2 2 0 011.97-2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.07 7.07a16 16 0 006 6l.93-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
         <span>(602) 694-2905</span>
       </a>
-      <a href="#schedule" class="btn nav-cta-desktop">Schedule Now</a>
+      <a href="#schedule" class="btn nav-cta-desktop">Request a Demo</a>
       <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -412,7 +418,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.68 19.79 19.79 0 01.82 2a2 2 0 011.97-2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.07 7.07a16 16 0 006 6l.93-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
     (602) 694-2905
   </a>
-  <a href="#schedule" class="btn mob-cta" onclick="closeMenu()">Schedule Now</a>
+  <a href="#schedule" class="btn mob-cta" onclick="closeMenu()">Request a Demo</a>
 </div>
 <div class="mob-overlay" id="mobOverlay" onclick="closeMenu()"></div>
 
@@ -427,7 +433,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       Independent guidance backed by current market data. Know what your agency is delivering and where your firm stands.
     </p>
     <a href="#schedule" class="btn fade4">
-      Schedule Now
+      Request a Demo
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
     <div class="hero-img fade4">
@@ -688,14 +694,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   <div class="schedule-glow"></div>
   <div class="wrap schedule-inner">
     <div class="schedule-hdr">
-      <div class="pill"><span class="dot"></span> Free Audit</div>
+      <div class="pill"><span class="dot"></span> Request a Demo</div>
       <h2>Let's Start a Conversation</h2>
-      <p class="schedule-sub">Pick a time that works for you — and let's see how we can help.</p>
+      <p class="schedule-sub">Pick a time that works for you, and let's see how we can help.</p>
     </div>
     <div class="schedule-widget">
       <iframe
         src="https://calendly.com/roger-lawmarketingally/30min"
-        title="Schedule a Free Audit"
+        title="Request a Demo"
         loading="lazy"
       ></iframe>
     </div>
@@ -713,8 +719,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   <div class="footer-slant"></div>
   <div class="wrap footer-inner">
     <div class="footer-cta-row">
-      <p class="footer-cta-hl">Make Your <span class="green">Success</span> Our Agenda.</p>
-      <a href="#schedule" class="btn footer-cta-btn">Schedule Now</a>
+      <p class="footer-cta-hl">Ready to See What Your Marketing Is <span class="green">Really Producing?</span></p>
+      <a href="#schedule" class="btn footer-cta-btn">Request a Demo</a>
     </div>
     <div class="footer-rule"></div>
     <div class="footer-cols">
@@ -736,7 +742,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
           <text x="114" y="127" fill="white" font-family="Georgia,'Times New Roman',serif" font-size="18" font-weight="700" letter-spacing="5">ALLY</text>
           <line x1="186" y1="122" x2="232" y2="122" stroke="#e88b1f" stroke-width="1.5"/>
         </svg>
-        <p class="footer-tagline">Serving Law Firms Nationally</p>
+        <p class="footer-tagline">Based in Arizona, Serving Law Firms Nationally</p>
         <div class="footer-socials">
           <a href="https://www.linkedin.com/in/roger-leathers-3b388929/" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>

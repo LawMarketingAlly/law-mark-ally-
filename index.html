@@ -182,6 +182,21 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .plat-note{font-size:14px;color:var(--text-muted)}
 .plat-tag{font-size:15px;font-weight:700;letter-spacing:.02em;color:var(--text-white)}
 @media(max-width:799px){.platform{padding:72px 0}.plat-cards{grid-template-columns:1fr}.plat-card{padding:24px}.plat-lead{font-size:17px}}
+/* ══ HOW WE WORK (three open cards) ══ */
+.hw-head{position:relative;max-width:820px;margin:0 auto 52px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hw-head h2{font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.hw-head .pillars-sub{max-width:760px;font-size:17px;line-height:1.75}
+.hw-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.hw-card{background:linear-gradient(180deg,#111d32,#0c1322);border:1px solid rgba(232,139,31,.16);border-radius:18px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:10px}
+.hw-icon{width:52px;height:52px;border-radius:14px;background:rgba(232,139,31,.10);border:1px solid rgba(232,139,31,.22);display:flex;align-items:center;justify-content:center;color:var(--green-accent);margin-bottom:8px}
+.hw-card h3{font-size:22px;font-weight:700;color:var(--text-white);line-height:1.25}
+.hw-desc{font-size:15px;color:var(--green-accent);font-weight:600}
+.hw-list{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--border);padding-top:20px}
+.hw-list li{font-size:15px;line-height:1.65;color:var(--text-body)}
+.hw-list strong{display:block;color:var(--text-white);font-weight:700;font-size:15.5px;margin-bottom:2px}
+.hw-cta{position:relative;display:flex;justify-content:center;margin-top:44px}
+@media(max-width:1000px){.hw-grid{grid-template-columns:1fr;max-width:640px;margin:0 auto}}
+@media(max-width:799px){.hw-head{margin-bottom:36px;text-align:left;align-items:flex-start}.hw-card{padding:24px 22px 26px}}
 @media(prefers-reduced-motion:reduce){.track-l,.track-r{animation:none}.pa-wrap{-webkit-mask-image:none;mask-image:none}.pa-track{width:auto}.pa-list{flex-wrap:wrap;justify-content:center;row-gap:12px;padding:0 20px}.pa-list[aria-hidden]{display:none}}
 
 /* ══════════════════════════════════════════════════════
@@ -361,7 +376,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   "@type": "ProfessionalService",
   "name": "Law Marketing Ally",
   "url": "https://www.lawmarketingally.com/",
-  "description": "Independent law firm marketing advisor providing strategy, vendor oversight, intake optimization, and performance tracking for law firms.",
+  "description": "Independent law firm marketing advisor providing strategy, vendor oversight, and performance tracking for law firms, plus SEO intelligence across organic search, the local map pack, and AI answers.",
   "telephone": "+16026942905",
   "priceRange": "$$",
   "serviceType": "Law Firm Marketing Consulting",
@@ -390,13 +405,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         "itemOffered": {
           "@type": "Service",
           "name": "Vendor Management & Oversight"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Intake Optimization"
         }
       },
       {
@@ -638,118 +646,45 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 <section class="pillars" id="pillars">
   <div class="pillars-bg"></div>
   <div class="wrap">
-    <div class="pillars-grid">
-      <div class="pillars-header">
-        <div class="pill"><span class="dot"></span> How We Work Together</div>
-        <h2>First, the Truth About Your Marketing</h2>
-        <p class="pillars-sub">Every engagement begins with a thorough, independent audit. No sales pitch, no agency spin. We look at what your marketing is actually producing, where your budget is leaking, and how you compare to your local competitors. Then we get to work in four areas.</p>
-      </div>
-      <div class="pillars-cards">
-
-        <div class="p-card" onclick="togglePillar(this)">
-          <div class="p-card-head">
-            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
-            <div class="p-titles">
-              <div class="p-title">Strategy</div>
-              <div class="p-desc" style="margin-bottom:28px">Knowing where to focus and why.</div>
-            </div>
-            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
-              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-          </div>
-          <div class="p-body"><div class="p-body-inner">
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Your Market Is Unique. Your <span class="green">Strategy</span> Should Be Too.</p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:18px">A strategy that ignores your market won't work. We research your competitors, your geography, and your practice areas to <span class="green">find the gaps others are missing.</span></p>
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Know What It Really Costs to <span class="green">Win in Your Market</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:18px">We map out <span class="green">market saturation costs</span>: what it actually takes to compete for visibility in your area across <span class="green">organic search</span>, <span class="green">the local map pack</span>, <span class="green">AI answers</span>, <span class="green">paid ads</span>, and <span class="green">social media</span>. Many firms overspend in crowded channels and underspend where the real opportunity is. We show you where your competitors are concentrated, where the gaps are, and where your budget will earn the highest return.</p>
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Every Strategy Is Rooted in <span class="green">Current Market Data</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:18px"><span class="green">Competitive analysis. Regional benchmarking. Intake modeling.</span> Every recommendation is built on current data from your market, not national averages or guesswork.</p>
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px"><span class="green">AI Answers</span> Are Changing How Clients Find Attorneys</p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">More clients now ask AI tools who to hire. We make sure your strategy <span class="green">keeps pace</span> so those recommendations don't go to your competitors.</p>
-            <a href="#schedule" class="btn p-cta">Schedule a Strategy Session</a>
-          </div></div>
-        </div>
-
-        <div class="p-card" onclick="togglePillar(this)">
-          <div class="p-card-head">
-            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M9 7l-4 5 4 5"/><path d="M15 7l4 5-4 5"/></svg></div>
-            <div class="p-titles">
-              <div class="p-title">Vendor Oversight</div>
-              <div class="p-desc" style="margin-bottom:24px">Making sure the agencies you pay are actually delivering.</div>
-            </div>
-            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
-              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-          </div>
-          <div class="p-body"><div class="p-body-inner">
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Are You <span class="green">Paying for Results</span> or Just Activity?</p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Many agencies bill for work that's hard to measure and harder to verify. <span class="green">We change that.</span> We review your invoices, deliverables, and contracts, then compare your agency's results against current performance data from other agencies in your local market. You'll know what you're paying for, whether it's working, and how your agency really stacks up.</p>
-
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Is Your Agency Also <span class="green">Working for Your Competition?</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">If your agency represents competing firms in your area, <span class="green">you may be funding your own competition.</span> We identify these conflicts and help you find a better arrangement.</p>
-
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Get the <span class="green">Attention You're Paying For</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Agencies often spread their teams thin, and your account becomes one of many. We hold your vendors accountable for the time, attention, and strategy your firm is paying for.</p>
-
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Know What Your Marketing Is <span class="green">Actually Earning</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px"><span class="green">We report on results.</span> We connect your marketing spend to signed cases so you can see what your investment is really producing.</p>
-
-            <a href="#schedule" class="btn p-cta">Get a Vendor Audit</a>
-          </div></div>
-        </div>
-
-        <div class="p-card" onclick="togglePillar(this)">
-          <div class="p-card-head">
-            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div class="p-titles">
-              <div class="p-title">Intake Optimization</div>
-              <div class="p-desc" style="margin-bottom:24px">Turning more leads into signed clients.</div>
-            </div>
-            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
-              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-          </div>
-          <div class="p-body"><div class="p-body-inner">
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Your Marketing Generates Leads. <span class="green">Is Your Intake Losing Them?</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Getting the phone to ring is only half the battle. If your intake process is slow, inconsistent, or unstructured, <span class="green">qualified leads walk out the door</span>, and you've already paid for every one of them.</p>
-
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px"><span class="green">Call Coaching</span> for Your Intake Team</p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">We review your calls, pinpoint where leads drop off, and help your team <span class="green">turn more conversations into consultations.</span></p>
-
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Turn Intake Into a <span class="green">Competitive Advantage</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">We don't just identify problems; we help fix them. Scripts, call frameworks, follow-up cadences, and accountability structures that help your team <span class="green">sign more of the right cases.</span></p>
-
-            <a href="#schedule" class="btn p-cta">Optimize Your Intake</a>
-          </div></div>
-        </div>
-
-        <div class="p-card" onclick="togglePillar(this)">
-          <div class="p-card-head">
-            <div class="p-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/><path d="M15 8h4v4"/></svg></div>
-            <div class="p-titles">
-              <div class="p-title">Performance Tracking</div>
-              <div class="p-desc" style="margin-bottom:24px">Measuring what's working and cutting what isn't.</div>
-            </div>
-            <button class="p-toggle" onclick="event.stopPropagation();togglePillar(this.closest('.p-card'))">
-              <svg class="p-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-          </div>
-          <div class="p-body"><div class="p-body-inner">
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">If You Can't <span class="green">Measure It</span>, You Can't Manage It</p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">If you don't know which channels are producing signed cases, you're guessing with your budget. We <span class="green">connect the dots</span> between spend and results so every dollar is accounted for.</p>
-
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Your Budget Goes Where <span class="green">the Performance Is</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">Your marketing plan shouldn't sit on a shelf for 12 months. We monitor results continuously and <span class="green">shift your budget</span> toward what's working and away from what isn't.</p>
-
-            <p style="font-size:16px;font-weight:700;color:var(--text-white);margin-bottom:8px">Watched Closely, <span class="green">Not Just Reviewed Monthly</span></p>
-            <p style="font-size:15px;line-height:1.72;color:var(--text-body);margin-bottom:22px">A lot can change in 30 days. We keep a regular eye on your campaigns and watch for shifts before they become problems. If something starts trending the wrong way, we <span class="green">catch it early</span> and fix it before it costs you.</p>
-
-            <a href="#schedule" class="btn p-cta">Start Tracking Performance</a>
-          </div></div>
-        </div>
-
-      </div>
+    <div class="hw-head">
+      <div class="pill"><span class="dot"></span> How We Work Together</div>
+      <h2>First, the Truth About Your Marketing</h2>
+      <p class="pillars-sub">Every engagement begins with a thorough, independent audit. No sales pitch, no agency spin. Using current market data across organic search, the local map pack, and AI answers, we show you what your marketing is actually producing, where your budget is leaking, and how you compare to your local competitors. Then we get to work in three areas.</p>
     </div>
+    <div class="hw-grid">
+        <article class="hw-card">
+          <div class="hw-icon"><svg width="26" height="26" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+          <h3>Strategy</h3>
+          <p class="hw-desc">Knowing where to focus, and why.</p>
+          <ul class="hw-list">
+            <li><strong>Built for your market.</strong> We study your competitors, geography, and practice areas to find the gaps others miss.</li>
+            <li><strong>Know what it costs to win.</strong> What it takes to compete in organic search, the map pack, AI answers, paid ads, and social, and where your budget earns the most.</li>
+            <li><strong>Ready for AI answers.</strong> More clients ask AI who to hire. Your strategy keeps pace.</li>
+          </ul>
+        </article>
+        <article class="hw-card">
+          <div class="hw-icon"><svg width="26" height="26" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M9 7l-4 5 4 5"/><path d="M15 7l4 5-4 5"/></svg></div>
+          <h3>Vendor Oversight</h3>
+          <p class="hw-desc">Making sure your agencies deliver.</p>
+          <ul class="hw-list">
+            <li><strong>Results, not activity.</strong> We review your invoices, deliverables, and contracts, and compare your agency against other agencies in your market.</li>
+            <li><strong>Conflicts, flagged.</strong> If your agency also represents competing firms in your area, you'll know.</li>
+            <li><strong>The attention you pay for.</strong> We hold vendors accountable for the time and strategy your firm is paying for.</li>
+          </ul>
+        </article>
+        <article class="hw-card">
+          <div class="hw-icon"><svg width="26" height="26" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/><path d="M15 8h4v4"/></svg></div>
+          <h3>Performance Tracking</h3>
+          <p class="hw-desc">Measuring what works, cutting what doesn't.</p>
+          <ul class="hw-list">
+            <li><strong>Spend tied to signed cases.</strong> Know which channels actually produce clients.</li>
+            <li><strong>Budget follows performance.</strong> We shift spend toward what's working, all year long.</li>
+            <li><strong>Watched closely.</strong> We catch problems early, before they cost you.</li>
+          </ul>
+        </article>
+    </div>
+    <div class="hw-cta"><a href="#schedule" class="btn">Request a Demo
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
   </div>
 </section>
 
@@ -879,12 +814,6 @@ function closeMenu(){
   document.getElementById('mobOverlay').classList.remove('open')
 }
 
-/* ── Pillar accordion ───────────────────────────────── */
-function togglePillar(card){
-  const wasOpen = card.classList.contains('open')
-  document.querySelectorAll('.p-card').forEach(c=>c.classList.remove('open'))
-  if(!wasOpen) card.classList.add('open')
-}
 
 
 </script>
